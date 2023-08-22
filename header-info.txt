@@ -1,0 +1,144 @@
+# Homepage-desktop
+
+## Background image: cover.png
+    width: 1440px
+    height: 680px
+    gap: 40px
+    filter-background: rgba(0, 0, 0, 0.5);
+
+
+## Navigation bar:
+    width: 1322px
+    height: 104px
+    left: 59px
+    padding: 23px 164px 23px 136px
+    border-radius: 34px
+    gap: 324px
+
+navbar-navigation:
+    width: 373px
+    height: 24px
+    top: 40px
+    left: 785px
+        button home:
+            form (width: 45px, height: 24px)
+            content: Home
+
+        button product:
+            form (width: 60px, height: 24px)
+            content: Product
+
+        button pricing:
+            form (width: 53px, height: 24px)
+            content: Pricing
+
+        button contact:
+            form (width: 59px, height: 24px)
+            content: Contact
+
+        button search:
+            form (width: 20.000930786132812px
+                height: 20.000688552856445px
+                top: 2px
+                left: 319px)
+
+        button basket:
+            form (width: 16px
+                height: 14.933443069458008px
+                top: 5px
+                left: 357px)
+
+    typography (//styleName: link;
+        font-family: Montserrat;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 24px;
+        letter-spacing: 0.20000000298023224px;
+        text-align: center;)
+        
+navbar-brand:
+    width: 187px
+    height: 58px
+    top: 23px
+    left: 136px
+    padding: 13px 57px 13px 0px
+    gap: 10px
+    content:(KMarketer)
+    typography (//styleName: h3;
+            font-family: Montserrat;
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 32px;
+            letter-spacing: 0.10000000149011612px;
+            text-align: left;)
+    color: rgba(255, 255, 255, 1);
+
+## Container 
+    width: Fixed (1,050px)
+    height: Hug (571px)
+    top: 104px
+    left: 195px
+    padding: 80px 0px 80px 0px
+    gap: 80px
+
+Main-content
+    width: Fixed (860px)
+    height: Hug (411px)
+    padding: 40px 0px 40px 0px
+    gap: 40px
+
+H1
+    form (width: 573px, height: 143px)
+    content (We Take Care of the Future)
+    typography (//styleName: h1;
+            font-family: Montserrat;
+            font-size: 58px;
+            font-weight: 800;
+            line-height: 80px;
+            letter-spacing: 0.20000000298023224px;
+            text-align: center;)
+    color (background:rgba(255, 255, 255, 1);)
+
+H4
+    form (width: 539px, height: 60px)
+    content (We know how large objects will act, but things on a 
+            small scale just do not act that way.)
+    typography (//styleName: h4;
+            font-family: Montserrat;
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 30px;
+            letter-spacing: 0.20000000298023224px;
+            text-align: center;)
+    color (background: rgba(255, 255, 255, 1);)
+
+Buttons
+form (width: Hug (349px), height: Hug (48px),gap: 10px)
+
+button1: width: Hug (185px)
+        height: Hug (48px)
+        padding: 10px 36px 10px 36px
+        border-radius: 37px
+        gap: 10px
+        background-color: rgba(255, 166, 43, 1);
+
+        text: (Get Quote Now)
+
+button2: width: Hug (154px)
+        height: Hug (48px)
+        padding: 10px 36px 10px 36px
+        border-radius: 37px
+        border: 1px
+        gap: 10px
+        border color: rgba(255, 255, 255, 1);
+        text:(Learn More)
+
+buttons text style:
+        font-family: Montserrat;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 28px;
+        letter-spacing: 0.20000000298023224px;
+        text-align: center;
+        color:rgba(255, 255, 255, 1);
+
