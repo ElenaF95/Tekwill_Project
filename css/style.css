@@ -2,8 +2,9 @@ html,
 body{
     height: 100%;
     line-height: 1;
-    font-size: 16px;
-    color:rgb(0, 0, 0);
+    font-size: 14px;
+    color:#ffffff;
+    font-weight: 500;
     font-family: Montserrat;
 
 }
@@ -13,5 +14,46 @@ body{
 }
 ._container{
     max-width: 1050px;
+    padding: 0px 15px;
     margin: 0px auto;
+    box-sizing: content-box;
+}
+/*---HEADER-----------------------------------------*/
+.header{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 50;
+}
+.header__container{
+    display: flex;
+    min-height: 104px;
+    align-items: center;
+}
+.header__logo{
+    font-size: 24px;
+    font-weight: 700;
+    color: inherit;
+}
+.header__menu{
+    margin: 0px 0px 0px 520px;
+}
+.menu{
+
+}
+.menu__list{
+    display: flex;
+    flex-wrap: wrap;
+}
+.menu__item{
+
+}
+.menu__item:not(:last-child){
+    margin: 0px 21px 0px 0px;
+}
+.menu__link{
+    color: #ffffff;
+    line-height: 24px;
+    font-weight: 600;
 }
