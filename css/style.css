@@ -73,7 +73,7 @@ button{
     margin-left: 40px;
     gap: 20px;
 }
-.action__link{
+.action__item{
     color: #ffffff;
     line-height: 24px;
     height: 16px;
