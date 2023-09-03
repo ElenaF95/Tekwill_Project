@@ -8,7 +8,7 @@ body{
     font-family: Montserrat;
 
 }
-.wrapper{
+.top-banner{
     min-height: 100%;
     overflow: hidden;
     display: flex;
@@ -23,7 +23,7 @@ body{
 
 /*---HEADER-----------------------------------------*/
 .header{
-    position: absolute;
+    position: fixed;
     width: 100%;
     left: 0;
     top: 0;
@@ -44,9 +44,8 @@ body{
     margin: 0px 0px 0px 520px;
     display: flex;
 }
-.menu{
-    padding: 5px 0;
-}
+
+
 .menu__list{
     display: flex;
 }
@@ -55,7 +54,7 @@ body{
     list-style-type: none;
 }
     
-.menu__icons{
+.menu__action-bar{
     list-style-type: none;
     display: flex;
     color: #ffffff;
