@@ -12,6 +12,7 @@ body{
     background-image: url(/img/background.png);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position-x: center;
     padding: 40px 0 120px 0;
 }
 .container{
