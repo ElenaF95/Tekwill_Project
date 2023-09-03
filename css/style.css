@@ -134,3 +134,53 @@ button{
     border: 1px solid #ffffff;
 }
 
+/*---MEDIA-QUERIES-----------------------------------------*/
+@media screen and (min-width: 320px) and (max-width: 600px) {
+    .top-banner{
+        padding: 20px 0 100px 0;
+    }
+    .container{
+        max-width: 290px;
+    }
+    .header{
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 10px;
+        letter-spacing: 0.1px;
+        margin-bottom: 140px;
+    }
+    .header__logo{
+        text-align: center;
+        margin: 0 auto;
+        font-size: 20px;
+    }
+    .header__menu{
+        margin: 0 auto;
+        font-size: 12px;
+    }
+    .menu__action-bar{
+        margin: 0 auto;
+        font-size: 12px;
+    }
+  
+    .top-banner__title{
+        font-size: 18px;
+        line-height: 32px;
+        font-weight: 700;
+        text-align: center;
+        margin: 0px 0px 15px 0px;
+        letter-spacing: 0.1px;
+    }
+    .top-banner__text{
+        font-size: 12px;
+        line-height: 18px;
+        margin: 0px 0px 15px 0px;
+        letter-spacing: 0.1px;
+    }
+    .top-banner__button{
+        line-height: 18px;
+        padding:10px 25px;
+        letter-spacing: 0.1px;
+        font-size: 12px;
+    }
+}
