@@ -2,7 +2,7 @@ html,
 body{
     height: 100%;
     font-size: 14px;
-    color:#ffffff;
+    color: var(--light-text-color,#ffffff);
     font-weight: 500;
     font-family: Montserrat;
     margin: 0;
@@ -60,7 +60,7 @@ button{
     gap: 20px;
 }
 .item__link{
-    color: #ffffff;
+    color: var(--light-text-color,#ffffff);
     font-style: normal;
     font-weight: 600;
     line-height: 24px;
@@ -117,7 +117,7 @@ button{
     display: inline-flex;
     align-items: center;
     letter-spacing: 0.2px;
-    color: #ffffff;
+    color: var(--light-text-color,#ffffff);
     font-weight: 700;
     line-height: 26px;
     padding:10px 35px;
@@ -158,26 +158,35 @@ button{
 }
 .intro__grid-container{
     display: grid;
-    grid-template-columns: auto auto auto;
-    gap: 30px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 30px;
 }
 .grid-item{
     background-color: #ffffff;
-    padding: 35px 40px;
+    padding: 35px;
 }
 .grid-item__title{
     display: flex;
+    margin-bottom: 15px;
+    gap: 15px;
 }
 .grid-item__icon{
     width: 48px;
     height: 48px;
-    margin-right: 15px;
+    margin: auto 0;
 }
 h5{
-
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0.1px;
+    margin: auto 0;
+    color: var(--text-color, #252B42);
 }
 .grid-item__content{
-
+    line-height: 20px;
+    letter-spacing: 0.2px;
+    color:var(--second-text-color, #737373);
 }
 
 
@@ -232,5 +241,30 @@ h5{
         padding:10px 25px;
         letter-spacing: 0.1px;
         font-size: 12px;
+    }
+    /*-----------------------------------------------------*/
+    .intro{
+        padding: 75px 0 100px 0;
+    }
+    .intro__heading{
+        align-items: center;
+    }
+    .intro-title{
+       max-width: 280px;
+    }
+    .intro-subtitle{
+       max-width: 260px;
+       margin: 0px auto 45px auto;
+    }
+    .intro__grid-container{
+        grid-template-columns: auto;
+    }
+    .grid-item{
+        padding: 20px;
+    }
+    .grid-item__title{
+        display: flex;
+        margin-bottom: 10px;
+        gap: 10px;
     }
 }
