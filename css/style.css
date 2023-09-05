@@ -226,7 +226,7 @@ button{
     cursor: pointer;
     margin: auto 0;
 }
-.footer__borderline{
+hr{
     border-top: 1px solid #364067;
     width: 1020px;
     margin-top: 40px;
@@ -257,11 +257,12 @@ button{
     text-decoration: none;
 }
 .input__subscribe{
-   display: flex;  
+   display: flex; 
+   max-width: 320px; 
 }
 .input__email{
     display: inline-block;
-    width: 210px;
+    max-width: 210px;
     height: 60px;
     border: 1px solid #E6E6E6;
     border-radius: 5px 0px 0px 5px; 
@@ -277,7 +278,7 @@ button{
 }
 .input__submit{
     display: inline-block;
-    width: 110px;
+    max-width: 110px;
     height: 60px;
     border: 1px solid #E6E6E6;
     border-radius: 0px 5px 5px 0px; 
@@ -391,7 +392,36 @@ button{
         gap: 10px;
     }
   /*-----------------------------------------------------*/
+  .footer__heading{
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 50px;
+    }
+    .footer__action-bar{
+        margin-left: 0px;
+        margin-right: auto;
+    }
+    hr{
+        border: none;
+    }
     .footer__grid-container{
         grid-template-columns: auto;
+        padding: 0px auto;
+        max-width: 280px;
     }
+    .input__subscribe{
+        max-width: 280px;
+    }
+    .input__email{
+        max-width: 190px;
+    }
+    .input__submit{
+        max-width: 90px;
+    }
+    .footer-bottom__text{
+        margin: 0px auto;
+        text-align: center;
+        max-width: 230px;
+    }
+    
 }
