@@ -315,6 +315,7 @@ button{
     .intro__grid-container{
         grid-template-columns: 1fr 1fr;
     } 
+   
 }
 @media screen and (min-width: 320px) and (max-width: 600px) {
     .top-banner{
@@ -388,5 +389,9 @@ button{
         display: flex;
         margin-bottom: 10px;
         gap: 10px;
+    }
+  /*-----------------------------------------------------*/
+    .footer__grid-container{
+        grid-template-columns: auto;
     }
 }
