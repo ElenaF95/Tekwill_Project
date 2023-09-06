@@ -188,6 +188,58 @@ button{
     color: #737373;
 }
 
+/*---RECORDING-SECTION----------------------------------------------*/
+.recording-section{
+    background-image: url(/img/background-contact.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+    padding: 90px 0;
+}
+
+.contact-section{
+    background: #FAFAFA;
+    width: 100%;
+    padding: 40px 0px;
+}
+.contact-section__content{
+    display:flex;
+    width: 100%;
+    align-items: center;
+}
+.contact-section__text{
+   
+}
+.contact-section__title{
+    color: #252B42;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+    letter-spacing: 0.1px;
+    margin-bottom: 10px;
+    margin-top: 0px;
+}
+.contact-section__subtitle{
+    color: #737373;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+.submit-button__button-contact{
+    display: flex;
+    border: none;
+    border-radius: 5px; 
+    background-color: #FFA62B;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: 700;
+    line-height: 28px; 
+    letter-spacing: 0.2px;
+    padding: 15px 40px;
+    margin-left: auto;
+}
 /*---FOOTER----------------------------------------------*/
 .footer__content{
     background-color: #252B42;
