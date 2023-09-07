@@ -10,4 +10,4 @@ let isIsland = false;
 console.log(isIsland);
 
 let countryDescription =`${country} is located in ${continent}, ${population} million people live here.`;
-console.log(countryDescription);
+console.log(countryDescription); 
