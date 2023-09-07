@@ -1,6 +1,3 @@
-let variable = 'Hello World';
-if (variable === 'Hello World') alert('Hello World');
-
 let country = 'Italy';
 let continent = 'Europa';
 let population = 59.11;
