@@ -194,14 +194,13 @@ button{
     width: 100%;
     padding: 80px 0;
 }
-.video-section__content{
-  
-}
 .video-section__heading{
     max-width: 470px;
     margin: 0 auto;
 }
-.video-section__title{
+.video-section__title,
+.reviews-section__title,
+.teams-section__title{
     font-size: 40px;
     font-weight: 700;
     line-height: 57px;
@@ -209,12 +208,17 @@ button{
     text-align: center;
     margin: 0px 0px 10px 0px;
 }
-.video-section__subtitle{
+.video-section__subtitle,
+.reviews-section__subtitle,
+.teams-section__subtitle{
     line-height: 20px;
     letter-spacing: 0.2px;
-    text-align: center;
+    text-align: center; 
+}
+.video-section__subtitle{
     margin: 0px 0px 50px 0px;
 }
+
 .video-section__movie{
     position: relative;
 }
@@ -236,6 +240,79 @@ button{
     background-color: #00A0C1;
     cursor: pointer;
     text-align: center;
+}
+/*---REVIEWS-SECTION----------------------------------------------*/
+.reviews-section,
+.teams-section{
+    background-color: #252B42;
+    width: 100%;
+    padding: 80px 0 100px 0;
+}
+.reviews-section__subtitle,
+.teams-section__subtitle{
+    margin: 0px 0px 80px 0px;
+}
+.reviews-section__grid-container,
+.teams-section__grid-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 30px;
+}
+.reviews-section__grid-item,
+.teams-section__grid-item{
+    background-color: #ffffff;
+}
+.reviews-section__grid-item{
+    padding: 30px 35px;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid #dedede;
+}
+.reviews-section__rating{
+    display: flex;
+}
+.rating__score{
+    width: 22px;
+}
+.reviews-section__client-message,
+.team-member__profession{
+    color: #737373;
+    font-weight: 600;
+    font-size: inherit;
+    line-height: 24px;
+    letter-spacing: 0.2px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+
+/*---TEAMS-SECTION----------------------------------------------*/
+.teams-section__team-member{
+    width: 100%;
+    margin-bottom: 30px;
+}
+.team-member__fullname{
+    color: #252B42;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.1px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+.team-member__profession{
+    text-align: center;
+}
+.team-member__sm{
+    display: flex;
+    margin: 5px auto 30px auto;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+}
+.team-member__sm-page{
+    width: 24px;
 }
 
 /*---RECORDING-SECTION----------------------------------------------*/
