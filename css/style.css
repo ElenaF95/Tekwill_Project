@@ -649,14 +649,19 @@ hr{
     .intro__heading{
         align-items: center;
     }
-    .intro-title{
+    .intro-title,
+    .video-section__title,
+    .reviews-section__title,
+    .teams-section__title{
        max-width: 280px;
     }
     .intro-subtitle{
        max-width: 260px;
        margin: 0px auto 45px auto;
     }
-    .intro__grid-container{
+    .intro__grid-container,
+    .reviews-section__grid-container,
+    .teams-section__grid-container{
         grid-template-columns: auto;
     }
     .grid-item{
@@ -667,6 +672,12 @@ hr{
         margin-bottom: 10px;
         gap: 10px;
     }
+    .video-section__subtitle,
+    .reviews-section__subtitle,
+    .teams-section__subtitle{
+       max-width: 260px;
+    }
+
     /*-----------------------------------------------------*/
     .recording-section__form-heading{
         width: 290px;
