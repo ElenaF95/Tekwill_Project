@@ -655,7 +655,10 @@ hr{
     .teams-section__title{
        max-width: 280px;
     }
-    .intro-subtitle{
+    .intro-subtitle,
+    .video-section__subtitle,
+    .reviews-section__subtitle,
+    .teams-section__subtitle{
        max-width: 260px;
        margin: 0px auto 45px auto;
     }
@@ -672,10 +675,10 @@ hr{
         margin-bottom: 10px;
         gap: 10px;
     }
-    .video-section__subtitle,
-    .reviews-section__subtitle,
-    .teams-section__subtitle{
-       max-width: 260px;
+    .video-section__movie-file{
+        width: 280px;
+        height: 420px;
+        object-fit: cover;
     }
 
     /*-----------------------------------------------------*/
