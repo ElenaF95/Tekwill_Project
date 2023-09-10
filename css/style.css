@@ -270,6 +270,8 @@ button{
 }
 .reviews-section__rating{
     display: flex;
+    margin-top: 0px;
+    margin-bottom: 20px;
 }
 .rating__score{
     width: 22px;
@@ -284,7 +286,31 @@ button{
     margin-top: 0px;
     margin-bottom: 0px;
 }
-
+.reviews-section__client{
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+.reviews-section__clients-photo{
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+}
+.reviews-section__clients-fullname{
+    color: #FFA62B;
+    font-weight: 600;
+    line-height: 24px; 
+    letter-spacing: 0.2px;
+    text-decoration: none;
+    margin: 0 0;
+}
+.reviews-section__clients-profession{
+    color: #252B42;
+    font-weight: 600;
+    line-height: 24px; 
+    letter-spacing: 0.2px;
+    margin: 0 0;
+}
 
 /*---TEAMS-SECTION----------------------------------------------*/
 .teams-section__team-member{
@@ -431,6 +457,7 @@ textarea::-webkit-input-placeholder{
     line-height: 28px; 
     letter-spacing: 0.2px;
     padding: 15px 40px;
+    cursor: pointer;
 }    
 .submit-button__button-contact{   
     margin-left: auto;
@@ -538,6 +565,7 @@ hr{
     line-height: 28px; 
     letter-spacing: 0.2px;
     padding: 15px auto;
+    cursor: pointer;
 }
 .footer__form-text{
     color: #BDBDBD;
