@@ -188,6 +188,13 @@ button{
     color: #737373;
 }
 
+/*---VIDEO-SECTION----------------------------------------------*/
+.video-section{
+    background: linear-gradient (to bottom, #252B42 0%, #252B42 50%, rgba(11,53,61,0.5)50%,rgba(11,53,61,0.5)100%);
+}
+
+
+
 /*---RECORDING-SECTION----------------------------------------------*/
 .recording-section{
     background-image: url(/img/background-contact.png);
