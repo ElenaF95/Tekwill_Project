@@ -70,7 +70,7 @@ switch(true){
 
 /*-----------FUNCTION------------*/
 function tellFortune(n, z, y, x){
-    console.log('You will be ' + x + ' in ' + y + ' and will get married to ' + z + ' with ' + n + ' kids.');
+    console.log(`You will be ${x} in ${y} and will get married to ${z} with ${n} kids.`);
 }
 tellFortune (3,'Ross','Bruxelles','Engineer');
 tellFortune (2,'Chandler','Amsterdam','IT Manager');
@@ -79,7 +79,7 @@ tellFortune (3,'Joey','Palermo','Travel Agent');
 
 function calculateDogAge(x){
     const dogAge = x * 7;
-    console.log('Your dog is ' + dogAge + ' years old in dog years!');
+    console.log(`Your dog is ${dogAge} years old in dog years!`);
 }
 calculateDogAge(2);
 calculateDogAge(4);
@@ -88,7 +88,7 @@ calculateDogAge(6);
 
 const calculationSupply = (currentAge, foodPerDay, maxAge=100) => {
     let quantityOfFood = (maxAge - currentAge) * (foodPerDay * 365);
-    console.log('You will need ' + quantityOfFood + ' kg of food to survive until you are ' + maxAge + ' years old');
+    console.log(`You will need ${quantityOfFood} kg of food to survive until you are ${maxAge} years old`);
 }
 calculationSupply(33,1);
 calculationSupply(18,0.5);
