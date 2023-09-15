@@ -87,9 +87,6 @@ const getAverage = (numbers) =>{
 };
 console.log(getAverage(values));
 
-
-
-
 //----------9----------//
 const myDog = new Object();
 myDog.name = 'Snow',
