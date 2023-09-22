@@ -55,17 +55,22 @@ console.log(combinedWords(phrase));
 let newString = 'Hello world, my name is Albert';
 
 function vowels(string) {
-    let stringArray = string.split('');
-    let vowelsList = ['a','e','i','o','u','y','A','E','I','O','U','Y'];
+  if (typeof string === 'string') {  
+    let lowerString = string.toLowerCase();
+    let vowelsList = ['a','e','i','o','u','y'];
     let vowelsCount = 0;
     let i = 0;
-    while(i < stringArray.length) {
-        i++
-        if(vowelsList.indexOf(stringArray[i]) !== -1){
-            vowelsCount += 1;
+    while(i < string.length) {
+        let char = lowerString[i];
+        if(vowelsList.includes(char)){
+            vowelsCount ++;
         }
+        i++
     }
     return vowelsCount;
+  } else {
+    console.error('Wrong format');
+  }
 }
 console.log(vowels(newString));
  
