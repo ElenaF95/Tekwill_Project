@@ -123,12 +123,12 @@ button{
     text-decoration: none;
     cursor: pointer;
 }
-.top-banner__button_orange{
+.top-banner__button-orange{
     background: #FFA62B;
     border: 1px solid #FFA62B;
 }
 
-.top-banner__button_border{
+.top-banner__button-border{
     background: transparent;
     border: 1px solid #ffffff;
 }
