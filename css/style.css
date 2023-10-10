@@ -382,13 +382,14 @@ button{
 }
 .recording-section__grid-item,
 .recording-section__form-item{
-    display: flex;
+    display:inline-block;
     width: 100%;
 }
 .recording-section__form-item{
     margin-bottom: 40px;
 }
 .recording-section__entry-field,
+.recording-section__select-field,
 .recording-section__message-field{
     display: flex;
     width: 100%;
@@ -399,24 +400,31 @@ button{
     font-size: inherit;
     font-weight: 600;
     letter-spacing: 0.2px;
-    color: #BDBDBD;
     padding: 15px 20px;
     box-sizing: border-box;
     margin: 0;
 }
 input[type="text"]::-webkit-input-placeholder,
 input[type="email"]::-webkit-input-placeholder,
-textarea::-webkit-input-placeholder{
+textarea::-webkit-input-placeholder,
+.recording-section__select-field{
     color: #BDBDBD;
 } 
-.recording-section__entry-field{
+.recording-section__entry-field,
+.recording-section__select-field{
     height: 50px;
 }
 .recording-section__message-field{
     resize: none;
     height: 140px;
 }
-
+.recording-section__form-text{
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 18px; 
+    letter-spacing: 0.2px;
+    margin: 0px 0px;
+}
 .contact-section{
     background: #FAFAFA;
     width: 100%;

@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://fonts.googleapis.com/css?family=Montserrat:regular,500,600,700,800&display=swap" rel="stylesheet" />
         <link rel="stylesheet" href="css/style.css">
-        <script src="scripts/hm-8.js"></script>
+        <script src="scripts/index.js"></script>
 
         <title>KMarketer</title>
     </head>
@@ -317,37 +317,57 @@
                             <h5 class="recording-section__description">Contact Us</h5>
                             <h2 class="recording-section__title">Make an Appointment</h2>
                         </div>
-                        <div class="recording-section__form">
+                        <form class="recording-section__form">
                             <div class="recording-section__grid-container">
                                 <div class="recording-section__grid-item">
-                                    <input class="recording-section__entry-field" type="text" name="fullname" placeholder="Full Name">
+                                    <input 
+                                        class="recording-section__entry-field" 
+                                        id="recording-section__input-fullname" 
+                                        type="text" 
+                                        name="fullname" 
+                                        placeholder="Full Name" 
+                                    >
+                                    <p class="recording-section__form-text" id="input-fullname__form-text"></p>
                                 </div> 
                                 <div class="recording-section__grid-item">
-                                    <input class="recording-section__entry-field" type="email" name="email" placeholder="example@gmail.com">
+                                    <input 
+                                        class="recording-section__entry-field" 
+                                        id="recording-section__input-email" 
+                                        type="email" 
+                                        name="email" 
+                                        placeholder="example@gmail.com" 
+                                        pattern="[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-zA-Z]{2,4}"
+                                    >
+                                    <p class="recording-section__form-text" id="input-email__form-text"></p>
                                 </div> 
                                 <div class="recording-section__grid-item">
-                                    <select class="recording-section__entry-field" name="day">
-                                        <option value="select" selected>Please Select </option>
+                                    <select class="recording-section__select-field" id="select-day__form"name="day">
+                                        <option value="select" disabled selected hidden>Please Select </option>
                                         <option value="monday">Monday</option>
                                         <option value="wednesday">Wednesday</option>
                                         <option value="friday">Friday</option>
                                     </select>
+                                    <p class="recording-section__form-text" id="select-day__form-text"></p>
                                 </div> 
                                 <div class="recording-section__grid-item">
-                                    <select class="recording-section__entry-field" name="time">
+                                    <select class="recording-section__select-field" id="select-time__form" name="time">
+                                        <option value="select" disabled selected hidden>4:00 Available</option>
                                         <option value="1:00">1:00 Available</option>
                                         <option value="2:00">2:00 Available</option>
                                         <option value="3:00">3:00 Available</option>
-                                        <option value="4:00" selected>4:00 Available</option>
+                                        <option value="4:00">4:00 Available</option>
                                         <option value="5:00">5:00 Available</option>
                                     </select>
+                                    <p class="recording-section__form-text" id="select-time__form-text"></p>
                                 </div> 
                             </div>
                             <div class="recording-section__form-item">
-                                <textarea class="recording-section__message-field" placeholder="Message"></textarea>
-                            </div>
-                            <input class="submit-button__button-appointment" type="submit" value="Book Appointment"> 
-                        </div>
+                                <textarea class="recording-section__message-field" id="recording-section__message-field" placeholder="Message"></textarea>
+                                <p class="recording-section__form-text" id="message-field__form-text"></p>
+                            </div> 
+                            <input class="submit-button__button-appointment" type="submit" value="Book Appointment">
+                        </form>
+                        
                     </div>
                 </div>
             </section>
