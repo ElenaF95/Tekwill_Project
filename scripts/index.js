@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const selectedItemColor = '#000000';
 
         const selectDay = inputSelectDay.value;
-        if (selectDay === "select") {
+        if (selectDay === '') {
             textSelectDay.textContent = 'Please select day';
             textSelectDay.style.color = errorColor;
             inputSelectDay.style.borderColor = errorColor; 
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         const selectTime = inputSelectTime.value;
-        if (selectTime === "select") {
+        if (selectTime === '') {
             textSelectTime.textContent = 'Please select time';
             textSelectTime.style.color = errorColor;
             inputSelectTime.style.borderColor = errorColor;

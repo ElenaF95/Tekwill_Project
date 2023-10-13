@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://fonts.googleapis.com/css?family=Montserrat:regular,500,600,700,800&display=swap" rel="stylesheet" />
         <link rel="stylesheet" href="css/style.css">
+        <script src="scripts/hm-10.js"></script>
         <script src="scripts/index.js"></script>
 
         <title>KMarketer</title>
@@ -14,7 +15,7 @@
                 <div class="container">
                     <header class="header">
                         <a href="#" class="header__logo">KMarketer</a>
-                        
+                    
                         <nav class="header__menu">
                             <ul class="menu__list">
                                 <li class="list__item">
@@ -51,7 +52,7 @@
                     </div> 
                 </div>                   
             </section>
-   
+
             <section class="intro">
                 <div class="container">
                     <div class="intro__heading">
@@ -61,7 +62,7 @@
                         </p>
                     </div>
                     <div class="intro__grid-container">
-                       
+                    
                         <div class="grid-item">
                             <div class="grid-item__heading">
                                 <img class="grid-item__icon" src="icons/carbon_tool-box.svg" alt="tool-box-icon">
@@ -69,7 +70,7 @@
                             </div>    
                             <p class="grid-item__content">the quick fox jumps over the lazy dog the quick fox jumps over the lazy dog</p>
                         </div>
-                       
+                    
                         <div class="grid-item">
                             <div class="grid-item__heading">
                                 <img class="grid-item__icon" src="icons/ant-design_shop-twotone.svg " alt="shop-icon">
@@ -77,7 +78,7 @@
                             </div>    
                             <p class="grid-item__content">the quick fox jumps over the lazy dog the quick fox jumps over the lazy dog</p>
                         </div>
-                       
+                    
                         <div class="grid-item">
                             <div class="grid-item__heading">
                                 <img class="grid-item__icon" src="icons/carbon_notebook.svg " alt="notebook-icon">
@@ -93,7 +94,7 @@
                             </div>    
                             <p class="grid-item__content">the quick fox jumps over the lazy dog the quick fox jumps over the lazy dog</p>
                         </div>
-                       
+                    
                         <div class="grid-item">
                             <div class="grid-item__heading">
                                 <img class="grid-item__icon" src="icons/bx_bx-stats.svg" alt="stats-icon">
@@ -122,7 +123,7 @@
                                 <br>the two major realms of Classical physics: Newtonian mechanics
                             </p>
                         </div>
-                       
+                    
                         <div class="video-section__movie">
                             <img class="video-section__movie-file" src="img/video.png" alt="movie about company">
                             <button class="video-section__movie-button"><img class="video__button-play" src="icons/icn play.svg"></button>
@@ -237,7 +238,7 @@
                                     </div>
                                 </div>
                             </div>  
-                           
+                        
                         </div>
                     </div>
                 </div>
@@ -341,29 +342,34 @@
                                     <p class="recording-section__form-text" id="input-email__form-text"></p>
                                 </div> 
                                 <div class="recording-section__grid-item">
-                                    <select class="recording-section__select-field" id="select-day__form"name="day">
-                                        <option value="select" disabled selected hidden>Please Select </option>
-                                        <option value="monday">Monday</option>
-                                        <option value="wednesday">Wednesday</option>
-                                        <option value="friday">Friday</option>
-                                    </select>
+                                    <input
+                                        class="recording-section__select-field"
+                                        id="select-day__form"
+                                        type="text"
+                                        name="date"
+                                        placeholder="Please Select"
+                                        onfocus="(this.type='date')"
+                                        onblur="(this.type='text')"
+                                    >
                                     <p class="recording-section__form-text" id="select-day__form-text"></p>
                                 </div> 
                                 <div class="recording-section__grid-item">
                                     <select class="recording-section__select-field" id="select-time__form" name="time">
-                                        <option value="select" disabled selected hidden>4:00 Available</option>
-                                        <option value="1:00">1:00 Available</option>
-                                        <option value="2:00">2:00 Available</option>
-                                        <option value="3:00">3:00 Available</option>
-                                        <option value="4:00">4:00 Available</option>
-                                        <option value="5:00">5:00 Available</option>
+                                        <option value="" disabled selected hidden>4:00 PM Available</option>
+                                        <option value="1:00">01:00 PM Available</option>
+                                        <option value="2:00">02:00 PM Available</option>
+                                        <option value="3:00">03:00 PM Available</option>
+                                        <option value="4:00">04:00 PM Available</option>
+                                        <option value="5:00">05:00 PM Available</option>
                                     </select>
                                     <p class="recording-section__form-text" id="select-time__form-text"></p>
                                 </div> 
                             </div>
-                            <div class="recording-section__form-item">
-                                <textarea class="recording-section__message-field" id="recording-section__message-field" placeholder="Message"></textarea>
-                                <p class="recording-section__form-text" id="message-field__form-text"></p>
+                            <div class="recording-section__grid-item ">
+                                <div class="recording-section__textarea">
+                                    <textarea class="recording-section__message-field" id="recording-section__message-field" placeholder="Message"></textarea>
+                                    <p class="recording-section__form-text" id="message-field__form-text"></p>
+                                </div>
                             </div> 
                             <input class="submit-button__button-appointment" type="submit" value="Book Appointment">
                         </form>
@@ -374,10 +380,8 @@
             <section class="contact-section">
                 <div class="container">
                     <div class="contact-section__content">
-                        <div class="contact-section__text">
-                            <h3 class="contact-section__title">Consulting Agency For Your Business</h3>
-                            <p class="contact-section__subtitle">the quick fox jumps over the lazy dog</p>
-                        </div>
+                        <h3 class="contact-section__title">Consulting Agency For Your Business</h3>
+                        <p class="contact-section__subtitle">the quick fox jumps over the lazy dog</p>
                         <input class="submit-button__button-contact" type="submit" value="Contact Us">
                     </div>
                 </div>
@@ -475,7 +479,7 @@
                                     </li>
                                 </ul>   
                             </div>
-                           
+                        
                             <div class="footer__grid-item">
                                 <h5 class="footer-grid__title">Get In Touch</h5>
                                 <form class="input__subscribe"> 
