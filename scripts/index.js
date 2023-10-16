@@ -74,14 +74,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             }
         };
-        const handleSuccess = (element, input, label = '') => {
+        const handleSuccess = (element, label = '', input) => {
             element.querySelector('.recording-section__form-text').textContent = label;
             element.classList.add('success');
             input.querySelector('.forms');
             input.classList.add('success');
         };
     
-        const handleError = (element, input, label = '') => {
+        const handleError = (element, label = '', input) => {
             element.querySelector('.recording-section__form-text').textContent = label;
             element.classList.add('error');
             input.querySelector('.forms');

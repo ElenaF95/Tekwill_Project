@@ -454,7 +454,7 @@ textarea::-webkit-input-placeholder,
     padding: 40px 0px;
 }
 .contact-section__content{
-    display:flex;
+    display: flex;
     width: 100%;
     align-items: center;
 }
@@ -467,6 +467,7 @@ textarea::-webkit-input-placeholder,
     letter-spacing: 0.1px;
     margin-bottom: 10px;
     margin-top: 0px;
+    align-items: center;
 }
 .contact-section__subtitle{
     color: #737373;
@@ -474,6 +475,7 @@ textarea::-webkit-input-placeholder,
     letter-spacing: 0.2px;
     margin-bottom: 0px;
     margin-top: 0px;
+    align-items: center;
 }
 .submit-button__button-contact,
 .submit-button__button-appointment{
