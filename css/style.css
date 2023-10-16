@@ -396,6 +396,7 @@ button{
 .forms.error{
     color: #BDBDBD;
     border: 1px solid #B71C1C;
+    
 }
 /*-------------------------------------------------------*/
 .forms{
@@ -430,13 +431,13 @@ textarea::-webkit-input-placeholder,
     background-image: url(/icons/arrow-down.png); 
     background-repeat: no-repeat, repeat;
     background-position: right 20px top 15px;
-    background-size: 18px;  
+    background-size: 18px;
+    height: 50px;  
 }  
-.recording-section__entry-field,
-.recording-section__select-field{
+.recording-section__entry-field{
     height: 50px;
 }
-.recording-section__message-field{
+#recording-section__message-field{
     resize: none;
     height: 140px;
 }
