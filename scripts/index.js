@@ -1,89 +1,106 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const form = document.querySelector('.recording-section__content');
-     
-    const inputFullname = document.getElementById('recording-section__input-fullname');
-    const textFullname = document.getElementById('input-fullname__form-text');
+    let form = document.querySelector('.recording-section__form');
     
-    const inputEmail = document.getElementById('recording-section__input-email');
-    const textEmail = document.getElementById('input-email__form-text');
-
-    const inputSelectDay = document.getElementById('select-day__form');
-    const textSelectDay = document.getElementById('select-day__form-text');
-
-    const inputSelectTime = document.getElementById('select-time__form');
-    const textSelectTime = document.getElementById('select-time__form-text');
-
-    const inputMessage = document.getElementById('recording-section__message-field');
-    const textMessage = document.getElementById('message-field__form-text');
-
-    form.addEventListener("submit", handleSubmit);
+    let inputFullName = document.getElementById('recording-section__input-fullname');
+    let inputEmail = document.getElementById('recording-section__input-email');
+    let inputSelectDate = document.getElementById('select-date__form');
+    let inputSelectTime = document.getElementById('select-time__form');
+    let inputMessage = document.getElementById('recording-section__message-field');
     
+    form.addEventListener('submit', handleSubmit);
+
     function handleSubmit(event) {
         event.preventDefault();
 
-        const successColor = '#004D40'
-        const succesBorderColor = '#BDBDBD'
-        const errorColor = '#B71C1C';
+        let formElements = [
+        {
+            element: inputFullName,
+            properties: {
+            value: inputFullName.value,
+            successLabel: `Your fullname ${inputFullName.value} was added`,
+            errorLabel: 'Please enter your full name, which must contain at least 3 letters',    
+            condition: inputFullName.value.length > 2,
+            },
+        },
+        {
+            element: inputEmail,
+            properties: {
+            value: inputEmail.value,
+            successLabel: `Your email ${inputEmail.value} was added`,
+            errorLabel: 'Please enter your email',
+            condition: !!inputEmail.value,
+            },
+        },
+        {
+            element: inputSelectDate,
+            properties: {
+            value: inputSelectDate.value,
+            successLabel: 'The date was selected',
+            errorLabel: 'Please select the date',
+            condition: !!inputSelectDate.value,
+            },
+        },
+        {
+            element: inputSelectTime,
+            properties: {
+            value: inputSelectTime.value,
+            successLabel: 'The time was selected',
+            errorLabel: 'Please select the time',
+            condition: !!inputSelectTime.value,
+            },
+        },
+        {
+            element: inputMessage,
+            properties: {
+            value: inputMessage.value.split(" "),
+            successLabel: 'Your message was added',
+            errorLabel:'The "Message" field cannot be empty and must contain a minimum of 3 words',
+            condition: inputMessage.value.split(" ").length > 2,
+            },
+        },
+        ];
 
-        const fullname = inputFullname.value;
-        if (fullname === '' || fullname.length <= 2) {
-            textFullname.textContent = 'The "Full Name" field cannot be empty and must contain a minimum of 3 letters';
-            textFullname.style.color = errorColor;
-            inputFullname.style.borderColor = errorColor;
-        } else {
-            textFullname.textContent = `Your fullname ${fullname} was added`;
-            textFullname.style.color = successColor;
-            inputFullname.style.borderColor = succesBorderColor;
-        }
+        const resetClass = (element, input) => {
+            let itemClasses = [...element.classList];
+            let inputClasses = [...input.classList];
+            for (let className of itemClasses) {
+                if (className !== 'recording-section__grid-item') {
+                    element.classList.remove(className);
+                }
+            }
+            for (let className of inputClasses) {
+                if (className !== 'forms') {
+                    input.classList.remove(className);
+                }
+            }
+        };
+        const handleSuccess = (element, input, label = '') => {
+            element.querySelector('.recording-section__form-text').textContent = label;
+            element.classList.add('success');
+            input.querySelector('.forms');
+            input.classList.add('success');
+        };
+    
+        const handleError = (element, input, label = '') => {
+            element.querySelector('.recording-section__form-text').textContent = label;
+            element.classList.add('error');
+            input.querySelector('.forms');
+            input.classList.add('error');
+        };
+       
+        const validateElement = (item) => {
+            const { element, properties } = item;
 
-        const email = inputEmail.value;
-        if (email === '') {
-            textEmail.textContent = 'Please enter your email';
-            textEmail.style.color = errorColor;
-            inputEmail.style.borderColor = errorColor;
-        } else {
-            textEmail.textContent = `Your email ${email} was added`;
-            textEmail.style.color = successColor;
-            inputEmail.style.borderColor = succesBorderColor;
-        }
+            let elementWrapper = element.parentElement;
+            resetClass(elementWrapper, element);
+             
+            if (properties.condition) {
+                handleSuccess(elementWrapper, properties.successLabel, element);
+            } else {
+                handleError(elementWrapper, properties.errorLabel, element);
+            }
+        };
 
-        const selectedItemColor = '#000000';
-
-        const selectDay = inputSelectDay.value;
-        if (selectDay === '') {
-            textSelectDay.textContent = 'Please select day';
-            textSelectDay.style.color = errorColor;
-            inputSelectDay.style.borderColor = errorColor; 
-        } else {
-            textSelectDay.textContent = 'The day was selected';
-            textSelectDay.style.color = successColor;
-            inputSelectDay.style.borderColor = succesBorderColor;
-            inputSelectDay.style.color = selectedItemColor;
-        }
-
-        const selectTime = inputSelectTime.value;
-        if (selectTime === '') {
-            textSelectTime.textContent = 'Please select time';
-            textSelectTime.style.color = errorColor;
-            inputSelectTime.style.borderColor = errorColor;
-        } else {
-            textSelectTime.textContent = 'The time was selected';
-            textSelectTime.style.color = successColor;
-            inputSelectTime.style.borderColor = succesBorderColor;
-            inputSelectTime.style.color = selectedItemColor;
-        }
-
-        const message = inputMessage.value;
-        const wordsList = message.split(" ");
-        const wordsCount = wordsList.length;
-        if (message === '' || wordsCount <= 2) {
-            textMessage.textContent = 'The "Message" field cannot be empty and must contain a minimum of 3 words';
-            textMessage.style.color = errorColor;
-            inputMessage.style.borderColor = errorColor;
-        } else {
-            textMessage.textContent = 'Your message was added';
-            textMessage.style.color = successColor;
-            inputMessage.style.borderColor = succesBorderColor;
-        }
+        formElements.forEach((item) => validateElement(item));
     }
 });

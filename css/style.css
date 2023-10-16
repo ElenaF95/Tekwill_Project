@@ -383,9 +383,22 @@ button{
     display:inline-block;
     width: 100%;
 }
-.recording-section__entry-field,
-.recording-section__select-field,
-.recording-section__message-field{
+/*---VALIDATION----------------------------------------------*/
+.recording-section__grid-item.success {
+    color: #004D40;
+}
+.forms.success{
+    color: #000000;
+}
+.recording-section__grid-item.error {
+    color: #B71C1C;
+}
+.forms.error{
+    color: #BDBDBD;
+    border: 1px solid #B71C1C;
+}
+/*-------------------------------------------------------*/
+.forms{
     display: flex;
     width: 100%;
     border: 1px solid #BDBDBD;
@@ -412,7 +425,7 @@ textarea::-webkit-input-placeholder,
     background-size: 18px;
 }
 #select-time__form,
-#select-day__form{ 
+#select-date__form{ 
     appearance: none;  
     background-image: url(/icons/arrow-down.png); 
     background-repeat: no-repeat, repeat;
@@ -427,15 +440,13 @@ textarea::-webkit-input-placeholder,
     resize: none;
     height: 140px;
 }
-.recording-section__textarea{
-    margin-bottom: 40px;
-}
+
 .recording-section__form-text{
     font-size: 12px;
     font-weight: 600;
     line-height: 18px; 
     letter-spacing: 0.2px;
-    margin: 0px 0px;
+    margin: 0px 5px;
 }
 .contact-section{
     background: #FAFAFA;
@@ -478,7 +489,10 @@ textarea::-webkit-input-placeholder,
     letter-spacing: 0.2px;
     padding: 15px 40px;
     cursor: pointer;
-}    
+} 
+.submit-button__button-appointment{
+    margin-top: 40px;
+}   
 .submit-button__button-contact{   
     margin-left: auto;
     margin-right: 40px;

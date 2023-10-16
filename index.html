@@ -322,7 +322,7 @@
                             <div class="recording-section__grid-container">
                                 <div class="recording-section__grid-item">
                                     <input 
-                                        class="recording-section__entry-field" 
+                                        class="recording-section__entry-field forms" 
                                         id="recording-section__input-fullname" 
                                         type="text" 
                                         name="fullname" 
@@ -332,7 +332,7 @@
                                 </div> 
                                 <div class="recording-section__grid-item">
                                     <input 
-                                        class="recording-section__entry-field" 
+                                        class="recording-section__entry-field forms" 
                                         id="recording-section__input-email" 
                                         type="email" 
                                         name="email" 
@@ -343,33 +343,31 @@
                                 </div> 
                                 <div class="recording-section__grid-item">
                                     <input
-                                        class="recording-section__select-field"
-                                        id="select-day__form"
+                                        class="recording-section__select-field forms"
+                                        id="select-date__form"
                                         type="text"
                                         name="date"
                                         placeholder="Please Select"
                                         onfocus="(this.type='date')"
                                         onblur="(this.type='text')"
                                     >
-                                    <p class="recording-section__form-text" id="select-day__form-text"></p>
+                                    <p class="recording-section__form-text" id="select-date__form-text"></p>
                                 </div> 
                                 <div class="recording-section__grid-item">
-                                    <select class="recording-section__select-field" id="select-time__form" name="time">
+                                    <select class="recording-section__select-field forms" id="select-time__form" name="time">
                                         <option value="" disabled selected hidden>4:00 PM Available</option>
-                                        <option value="1:00">01:00 PM Available</option>
-                                        <option value="2:00">02:00 PM Available</option>
-                                        <option value="3:00">03:00 PM Available</option>
-                                        <option value="4:00">04:00 PM Available</option>
-                                        <option value="5:00">05:00 PM Available</option>
+                                        <option value="1:00">1:00 PM Available</option>
+                                        <option value="2:00">2:00 PM Available</option>
+                                        <option value="3:00">3:00 PM Available</option>
+                                        <option value="4:00">4:00 PM Available</option>
+                                        <option value="5:00">5:00 PM Available</option>
                                     </select>
                                     <p class="recording-section__form-text" id="select-time__form-text"></p>
                                 </div> 
                             </div>
-                            <div class="recording-section__grid-item ">
-                                <div class="recording-section__textarea">
-                                    <textarea class="recording-section__message-field" id="recording-section__message-field" placeholder="Message"></textarea>
-                                    <p class="recording-section__form-text" id="message-field__form-text"></p>
-                                </div>
+                            <div class="recording-section__grid-item recording-section__textarea">
+                                <textarea class="recording-section__message-field forms" id="recording-section__message-field" placeholder="Message"></textarea>
+                                <p class="recording-section__form-text" id="message-field__form-text"></p>
                             </div> 
                             <input class="submit-button__button-appointment" type="submit" value="Book Appointment">
                         </form>
