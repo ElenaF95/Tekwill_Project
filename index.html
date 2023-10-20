@@ -17,20 +17,42 @@
                         <form class="user-block__input">
                             <input class="input__user-name" type="text" placeholder="Enter the Username">
                             <input class="submit-button__user-posts" type="submit" value="Get User Posts"> 
+                            
                         </form>
-                        <ul class="user__info">
-                            <li class="user__post">
-                                <h3>Title</h3>
-                                <p>desc</p>
-                                <ul class="user__comment">
-                                    <li>
-                                        <h5>Email</h5>
-                                        <h4>commentTitle</h4>
-                                        <p>commentBody</p>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
+                        <table class="user__info">
+                            <thead class="user-info__post">
+                                <tr>
+                                    <td class="post" colspan="3">
+                                        <div class="post__message">
+                                            <h3>Title</h3>
+                                            <p>desc</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td  colspan="3">
+                                        <div class="post__comments">
+                                            <img class="post__comments-icon" src="icons/comment.png" alt="message-icon">
+                                            <p>Comments:</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </thead>
+                            <tbody class="user-info__comments">
+                                <tr>
+                                    <td rowspan="2">
+                                        <div class="comments__user">
+                                            <img class="comments__user-icon" src="icons/user.png" alt="user-icon">
+                                            <h5>Email</h5>
+                                        </div>
+                                    </td>
+                                    <td colspan="2"><h4>commentTitle</h4></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2"><p>commentBody</p></td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </section>

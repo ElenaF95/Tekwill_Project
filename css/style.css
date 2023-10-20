@@ -50,13 +50,69 @@ body{
     padding: 10px 20px;
     cursor: pointer; 
 }
-.user__post {
-    border-bottom: 1px solid #364067;
+.user__info {
+    border: 1px solid transparent;
     width: 1020px;
     margin-top: 40px;
-    margin-bottom: 40px;
-    padding-left: 15px;
 }
+.post {
+    background: linear-gradient(#0b3f3d 20%,#252B42 100%);
+}    
+
+.user-info__post td,
+.user-info__comments td {
+    border: 1px solid #556464;
+    border-radius: 10px;
+    padding: 5px 15px;
+}
+.user-info__comments td {
+    background-color: rgba(11, 63, 61, 0.3);
+    color: #c0bcbc;
+}
+.post__comments {
+    display: flex;
+    align-items: center;
+    
+}
+.post__message h3 {
+    font-size: 18px;
+    line-height: 34px;
+    margin: 5px 0px;
+}
+.post__message p,
+.post__comments p,
+.user-info__comments p {
+    font-size: 12px;
+    line-height: 30px;
+    margin: 0px 0px;
+}
+
+.post__comments-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 20px;
+}
+.comments__user {
+    display: flex;
+    align-items: center;
+}
+.comments__user-icon {
+    width: 45px;
+    height: 45px;
+    margin-right: 20px;
+}
+.comments__user h5 {
+    font-size: 14px;
+    line-height: 30px;
+    margin: 0px 0px;
+}
+.user-info__comments h4 {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 30px;
+    margin: 0px 0px;
+}
+
 /*---HEADER-----------------------------------------*/
 .top-banner{
     background-image: url(/img/background.png);
