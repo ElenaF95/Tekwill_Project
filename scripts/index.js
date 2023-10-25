@@ -1,15 +1,15 @@
 document.addEventListener('DOMContentLoaded', function () {
     let form = document.querySelector('.recording-section__form');
     
-    let inputFullName = document.getElementById('recording-section__input-fullname');
-    let inputEmail = document.getElementById('recording-section__input-email');
-    let inputSelectDate = document.getElementById('select-date__form');
-    let inputSelectTime = document.getElementById('select-time__form');
-    let inputMessage = document.getElementById('recording-section__message-field');
+    let inputFullName = form.querySelector('#recording-section__input-fullname');
+    let inputEmail = form.querySelector('#recording-section__input-email');
+    let inputSelectDate = form.querySelector('#select-date__form');
+    let inputSelectTime = form.querySelector('#select-time__form');
+    let inputMessage = form.querySelector('#recording-section__message-field');
     
-    form.addEventListener('submit', handleSubmit);
+    form.addEventListener('submit', handleValidate);
 
-    function handleSubmit(event) {
+    function handleValidate(event) {
         event.preventDefault();
 
         let formElements = [
@@ -17,9 +17,9 @@ document.addEventListener('DOMContentLoaded', function () {
             element: inputFullName,
             properties: {
             value: inputFullName.value,
-            successLabel: `Your fullname ${inputFullName.value} was added`,
+            successLabel: `Your full name ${inputFullName.value} was added`,
             errorLabel: 'Please enter your full name, which must contain at least 3 letters',    
-            condition: inputFullName.value.length > 2,
+            condition: inputFullName.value.trim().length > 2,
             },
         },
         {
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
             value: inputMessage.value.split(" "),
             successLabel: 'Your message was added',
             errorLabel:'The "Message" field cannot be empty and must contain a minimum of 3 words',
-            condition: inputMessage.value.split(" ").length > 2,
+            condition: inputMessage.value.trim().split(" ").length > 2,
             },
         },
         ];
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             }
             for (let className of inputClasses) {
-                if (className !== 'forms') {
+                if (className !== 'recording-section__forms') {
                     input.classList.remove(className);
                 }
             }
@@ -77,30 +77,30 @@ document.addEventListener('DOMContentLoaded', function () {
         const handleSuccess = (element, label = '', input) => {
             element.querySelector('.recording-section__form-text').textContent = label;
             element.classList.add('success');
-            input.querySelector('.forms');
+            input.querySelector('.recording-section__forms');
             input.classList.add('success');
         };
-    
+
         const handleError = (element, label = '', input) => {
             element.querySelector('.recording-section__form-text').textContent = label;
             element.classList.add('error');
-            input.querySelector('.forms');
+            input.querySelector('.recording-section__forms');
             input.classList.add('error');
         };
-       
-        const validateElement = (item) => {
+
+        const validateInput = (item) => {
             const { element, properties } = item;
 
             let elementWrapper = element.parentElement;
             resetClass(elementWrapper, element);
-             
+
             if (properties.condition) {
                 handleSuccess(elementWrapper, properties.successLabel, element);
             } else {
                 handleError(elementWrapper, properties.errorLabel, element);
             }
         };
-
-        formElements.forEach((item) => validateElement(item));
+        
+        formElements.forEach((item) => validateInput(item));
     }
 });

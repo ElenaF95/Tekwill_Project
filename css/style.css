@@ -387,19 +387,17 @@ button{
 .recording-section__grid-item.success {
     color: #004D40;
 }
-.forms.success{
+.recording-section__forms.success{
     color: #000000;
 }
 .recording-section__grid-item.error {
     color: #B71C1C;
 }
-.forms.error{
-    color: #BDBDBD;
-    border: 1px solid #B71C1C;
-    
+.recording-section__forms.error{
+    border: 3px solid #B71C1C;
 }
-/*-------------------------------------------------------*/
-.forms{
+/*----------------------------------------------------------*/
+.recording-section__forms{
     display: flex;
     width: 100%;
     border: 1px solid #BDBDBD;
@@ -416,7 +414,7 @@ button{
 input[type="text"]::-webkit-input-placeholder,
 input[type="email"]::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder,
-.recording-section__select-field{
+select {
     color: #BDBDBD;
 } 
 ::-webkit-calendar-picker-indicator {
@@ -426,7 +424,7 @@ textarea::-webkit-input-placeholder,
     background-size: 18px;
 }
 #select-time__form,
-#select-date__form{ 
+#select-date__form{
     appearance: none;  
     background-image: url(/icons/arrow-down.png); 
     background-repeat: no-repeat, repeat;
@@ -434,7 +432,8 @@ textarea::-webkit-input-placeholder,
     background-size: 18px;
     height: 50px;  
 }  
-.recording-section__entry-field{
+#recording-section__input-fullname,
+#recording-section__input-email{
     height: 50px;
 }
 #recording-section__message-field{
