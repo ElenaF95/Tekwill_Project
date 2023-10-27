@@ -14,45 +14,48 @@
             <section class="users-block__content">
                 <div class="container">
                     <div id="user__block">
-                        <form class="user-block__input">
-                            <input class="input__user-name" type="text" placeholder="Enter the Username">
-                            <input class="submit-button__user-posts" type="submit" value="Get User Posts"> 
-                            
+                        <form class="user-block__form">
+                            <div class="input__user">
+                                <input class="input__user-name" type="text" placeholder="Enter the Fullname">
+                                <input class="button__user-posts" type="submit" value="Get Posts">
+                            </div>
+                            <div class="input-user__text">
+                                <div class="user-block__error-icon"></div>
+                                <p class="user-block__error-text">ErrorMessage</p>
+                            </div>
                         </form>
-                        <table class="user__info">
-                            <thead class="user-info__post">
-                                <tr>
-                                    <td class="post" colspan="3">
-                                        <div class="post__message">
-                                            <h3>Title</h3>
-                                            <p>desc</p>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td  colspan="3">
-                                        <div class="post__comments">
-                                            <img class="post__comments-icon" src="icons/comment.png" alt="message-icon">
-                                            <p>Comments:</p>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </thead>
-                            <tbody class="user-info__comments">
-                                <tr>
-                                    <td rowspan="2">
-                                        <div class="comments__user">
-                                            <img class="comments__user-icon" src="icons/user.png" alt="user-icon">
-                                            <h5>Email</h5>
-                                        </div>
-                                    </td>
-                                    <td colspan="2"><h4>commentTitle</h4></td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2"><p>commentBody</p></td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <div class="user-block__posts">
+                            <ul>
+                                <li>
+                                    <table class="user__post">
+                                        <tr>
+                                            <td class="post">
+                                                <div class="post__message">
+                                                    <h3>Title</h3>
+                                                    <p>desc</p>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="post__comments">
+                                                <div class="post__comments-icon"></div>
+                                                <p>Comments:</p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="user__feedback">
+                                                <div class="comments__user">
+                                                    <div class="comments__user-icon"></div>
+                                                    <h5>Email</h5>
+                                                </div>
+                                                <h4>commentTitle</h4>
+                                                <p>commentBody</p>
+                                            </td>             
+                                        </tr>
+                                    </table>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </section>

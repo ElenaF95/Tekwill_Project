@@ -17,29 +17,34 @@ body{
 }
 /*---USER-BLOCK-------------------------------------*/
 .users-block__content {
-    background-color: #252B42;
+    background: linear-gradient(#252B42 70%, #0b3f3d 100%);
     width: 100%;
     padding: 50px 0;
 }
-.user-block__input{
+.user-block__form {
+    margin-bottom: 20px;
+}
+.input__user,
+.input-user__text {
     display: flex;
+    margin-left: 2px;
 }
 .input__user-name {
-    width: 220px;
+    width: 250px;
     border: 1px solid #BDBDBD;
-    border-radius: 10px; 
+    border-radius: 5px; 
     background-color: #F9F9F9;
     font-family: inherit;
     font-size: inherit;
     font-weight: 600;
     letter-spacing: 0.2px;
     padding: 10px 20px; 
-    margin-right: 10px;
+    margin-right: 20px;
 }
-.submit-button__user-posts {
+.button__user-posts {
     display: flex;
     border: none;
-    border-radius: 10px; 
+    border-radius: 5px; 
     background-color: #FFA62B;
     color: inherit;
     font-family: inherit;
@@ -50,55 +55,78 @@ body{
     padding: 10px 20px;
     cursor: pointer; 
 }
-.user__info {
-    border: 1px solid transparent;
-    width: 1020px;
-    margin-top: 40px;
+.input-user__text{
+    align-items: center;
+    margin-left: 5px;
 }
-.post {
-    background: linear-gradient(#0b3f3d 20%,#252B42 100%);
-}    
-
-.user-info__post td,
-.user-info__comments td {
+.user-block__error-icon {
+    background: url(/icons/warning.png);  
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+.user-block__error-text{
+    color: #BDBDBD;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 28px; 
+    letter-spacing: 0.2px;
+    margin: 0px 0px;
+}
+.user-block__posts li {
+    margin-bottom: 15px;
+}
+.user__post {
+    border: none;
+    width: 1020px;
+}
+.user__post td {
+    background-color: #252B42;
     border: 1px solid #556464;
-    border-radius: 10px;
+    border-radius: 5px;
     padding: 5px 15px;
 }
-.user-info__comments td {
-    background-color: rgba(11, 63, 61, 0.3);
-    color: #c0bcbc;
-}
-.post__comments {
-    display: flex;
-    align-items: center;
-    
-}
+.post {
+    background: linear-gradient(#0b3f3d ,#252B42,#252B42 );
+}    
 .post__message h3 {
     font-size: 18px;
     line-height: 34px;
-    margin: 5px 0px;
+    margin: 10px 0px;
 }
 .post__message p,
 .post__comments p,
-.user-info__comments p {
+.user__feedback p {
     font-size: 12px;
     line-height: 30px;
     margin: 0px 0px;
 }
-
+.post__comments {
+    display: flex;
+    align-items: center;
+}
 .post__comments-icon {
-    width: 30px;
-    height: 30px;
+    background: url(/icons/comment.png);  
+    background-size: cover;
+    width: 24px;
+    height: 24px;
     margin-right: 20px;
+}
+.user__feedback {
+    background-color: #252B42;
+    color: #c0bcbc;
 }
 .comments__user {
     display: flex;
     align-items: center;
+    margin-bottom: 10px;
 }
 .comments__user-icon {
-    width: 45px;
-    height: 45px;
+    background: url(/icons/user.png);  
+    background-size: cover;
+    width: 24px;
+    height: 24px;
     margin-right: 20px;
 }
 .comments__user h5 {
@@ -106,7 +134,7 @@ body{
     line-height: 30px;
     margin: 0px 0px;
 }
-.user-info__comments h4 {
+.user__feedback h4 {
     font-size: 16px;
     font-weight: 600;
     line-height: 30px;
