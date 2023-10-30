@@ -82,9 +82,9 @@ document.addEventListener('DOMContentLoaded', function () {
             errorMessage.classList.add('user-block__error-text');
             errorMessage.textContent = `User with name ${userName} doesn't exist`;
             
-            form.appendChild(errorString);
             errorString.appendChild(warningIcon);
             errorString.appendChild(errorMessage);
+            form.appendChild(errorString);
 
             if(errorString) {
               form.removeChild(errorString);
@@ -95,14 +95,9 @@ document.addEventListener('DOMContentLoaded', function () {
          fetch(`https://jsonplaceholder.typicode.com/posts?userId=${myUserId}`)
          .then(response => response.json())
          .then((posts) =>{
-         
             // Create posts list
-            const postsList = document.createElement('ul');
-            const listWrapper = document.getElementsByClassName('user-block__posts');
-    
-            const currentList = listWrapper.querySelector('ul');
-            if (currentList) listWrapper.removeChild(currentList);   
-            
+            const postsList = document.getElementsByClassName('user-block__posts');
+           
             posts.forEach((post) => {
                const listItem = document.createElement('li');
                const itemTable = document.createElement('table');
@@ -131,69 +126,57 @@ document.addEventListener('DOMContentLoaded', function () {
                commentsIcon.classList.add('post__comments-icon');
                commentsText.textContent = 'Comments:';
 
-               // Joining table elements
-               
-               ul.appendChild(listItem);
-               listItem.appendChild(itemTable);
-
-               itemTable.appendChild(tableRowPost);
-               tableRowPost.appendChild(tableDataPost);
-               tableDataPost.appendChild(usersPost);
+               // Joining rows elements
                usersPost.appendChild(postTitle);
                usersPost.appendChild(postBody);
-               
+               tableDataPost.appendChild(usersPost);
+               tableRowPost.appendChild(tableDataPost);
               
-               itemTable.appendChild(tableRow);
-               tableRow.appendChild(tableData);
                tableData.appendChild(commentsIcon);
                tableData.appendChild(commentsText);
+               tableRow.appendChild(tableData);
+               
+               itemTable.appendChild(tableRowPost);
+               itemTable.appendChild(tableRow);
+
 
                // Generating post comments 
-               let commentsList 
                fetch(`https://jsonplaceholder.typicode.com/comments?postId=${post.id}`)
                .then(response => response.json())
                .then((comments) => {
-                  commentsList = comments
-                  getPostsComments(commentsList);
-               })   
-               .catch((error) => console.log(error))    
-            }); 
-            
-            listWrapper.append(postsList);  
-               
-            const getPostsComments = (commentsList) => {
-               const itemTable = document.getElementsByClassName('user__post');
-               const tableRowComment = document.createElement('tr');
+                  comments.forEach((comment) => {
+                     const tableRowComment = document.createElement('tr');
+                     const tableDataComment = document.createElement('td');
+                     const commentUser = document.createElement('div');
+                     const commentUserIcon = document.createElement('div');
+                     const commentUserEmail = document.createElement('h5');
+                     const commentTitle = document.createElement('h4');
+                     const commentBody = document.createElement('p');
+                     // Adding classes and content
+                     tableDataComment.classList.add('user__feedback');
+                     commentUser.classList.add('comments__user');
+                     commentUserIcon.classList.add('comments__user-icon');
+                     commentUserEmail.textContent = comment.email;
+                     commentTitle.textContent = comment.name;
+                     commentBody.textContent = comment.body;
+                     // Joining rows elements
+                     commentUser.appendChild(commentUserIcon);
+                     commentUser.appendChild(commentUserEmail);
+                     tableDataComment.appendChild(commentUser);
+                     tableDataComment.appendChild(commentTitle);
+                     tableDataComment.apappendChild(commentBody);
+                     tableRowComment.appendChild(tableDataComment);
 
-               commentsList.forEach((comment) => {
+                     itemTable.appendChild(tableRowComment);
+                  })
                   
-                  const tableDataComment = document.createElement('td');
-                  const commentUser = document.createElement('div');
-                  const commentUserIcon = document.createElement('div');
-                  const commentUserEmail = document.createElement('h5');
-                  const commentTitle = document.createElement('h4');
-                  const commentBody = document.createElement('p');
-                  
-                  // Adding classes and content
-                  tableDataComment.classList.add('user__feedback');
-                  commentUser.classList.add('comments__user');
-                  commentUserIcon.classList.add('comments__user-icon');
-                  commentUserEmail.textContent = comment.email;
-                  commentTitle.textContent = comment.name;
-                  commentBody.textContent = comment.body;
-                  // Joining table elements
-                  
-                  tableRowComment.appendChild(tableDataComment);
-                  tableDataComment.appendChild(commentUser);
-                  commentUser.appendChild(commentUserIcon);
-                  commentUser.appendChild(commentUserEmail);
-                  tableDataComment.appendChild(commentTitle);
-                  tableDataComment.apappendChild(commentBody);
-                  
-               })
-               itemTable.append(tableRowComment);
-            }
-            
+               })     
+               .catch((error) => console.log(error)) 
+               
+               listItem.appendChild(itemTable);
+               postsList.appendChild(listItem);
+            });
+              
          })
          .catch((error) => console.log(error)) 
       };
