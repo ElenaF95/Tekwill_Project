@@ -21,7 +21,7 @@ body{
     width: 100%;
     padding: 50px 0;
 }
-.user-block__form {
+#user-block__form {
     margin-bottom: 20px;
 }
 .input__user,
@@ -75,7 +75,7 @@ body{
     margin: 0px 0px;
 }
 .user-block__posts li {
-    margin-bottom: 15px;
+    margin-bottom: 25px;
 }
 .user__post {
     border: none;
@@ -85,7 +85,7 @@ body{
     background-color: #252B42;
     border: 1px solid #556464;
     border-radius: 5px;
-    padding: 5px 15px;
+    padding: 10px 15px 15px 15px;
 }
 .post {
     background: linear-gradient(#0b3f3d ,#252B42,#252B42 );
@@ -93,25 +93,31 @@ body{
 .post__message h3 {
     font-size: 18px;
     line-height: 34px;
-    margin: 10px 0px;
+    margin: 0px 0px 10px 0px;
 }
-.post__message p,
-.post__comments p,
-.user__feedback p {
-    font-size: 12px;
-    line-height: 30px;
+.post__message p {
+    font-size: 14px;
+    line-height: 24px;
     margin: 0px 0px;
+    
+}
+.post__message {
+    margin-bottom: 40px;
 }
 .post__comments {
-    display: flex;
+    color: #c0bcbc;
     align-items: center;
+    padding-top: 10px;
+    margin-top: 10px;
+    border-top: 1px solid #556464;
+    width: auto; 
 }
-.post__comments-icon {
-    background: url(/icons/comment.png);  
-    background-size: cover;
-    width: 24px;
-    height: 24px;
-    margin-right: 20px;
+.post__comments,
+.user__feedback p,
+.comments__user p {
+    font-size: 12px;
+    line-height: 24px;
+    margin: 0px 0px;
 }
 .user__feedback {
     background-color: #252B42;
@@ -120,7 +126,10 @@ body{
 .comments__user {
     display: flex;
     align-items: center;
+    padding-bottom: 10px;
     margin-bottom: 10px;
+    border-bottom: 1px solid #556464;
+    width: auto;
 }
 .comments__user-icon {
     background: url(/icons/user.png);  
@@ -129,16 +138,11 @@ body{
     height: 24px;
     margin-right: 20px;
 }
-.comments__user h5 {
-    font-size: 14px;
-    line-height: 30px;
-    margin: 0px 0px;
-}
 .user__feedback h4 {
     font-size: 16px;
     font-weight: 600;
-    line-height: 30px;
-    margin: 0px 0px;
+    line-height: 32px;
+    margin: 0px 0px 10px 0px;
 }
 
 /*---HEADER-----------------------------------------*/

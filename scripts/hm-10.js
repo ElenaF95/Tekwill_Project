@@ -71,7 +71,9 @@ document.addEventListener('DOMContentLoaded', function () {
             myUserId = myUser.id;
             getUserPosts(myUserId);
          } else {
-            const form = document.querySelector('.user-block__form');
+            const userBlock = document.getElementById('user__block');
+            
+            const form = document.getElementById('user-block__form');
             
             const errorString = document.createElement('div');
             const warningIcon = document.createElement('div');
@@ -82,13 +84,16 @@ document.addEventListener('DOMContentLoaded', function () {
             errorMessage.classList.add('user-block__error-text');
             errorMessage.textContent = `User with name ${userName} doesn't exist`;
             
+            const currentString = form.querySelector('.input-user__text');
+            if(currentString) form.removeChild(currentString);
+   
+            const currentUl = userBlock.querySelector('ul');
+            if (currentUl) userBlock.removeChild(currentUl);
+           
             errorString.appendChild(warningIcon);
             errorString.appendChild(errorMessage);
             form.appendChild(errorString);
 
-            if(errorString) {
-              form.removeChild(errorString);
-            }
          }
       };
       const getUserPosts = (myUserId) => {
@@ -96,8 +101,17 @@ document.addEventListener('DOMContentLoaded', function () {
          .then(response => response.json())
          .then((posts) =>{
             // Create posts list
-            const postsList = document.getElementsByClassName('user-block__posts');
-           
+            
+            const userBlock = document.getElementById('user__block');
+            const postsList = document.createElement('ul');
+            postsList.classList.add('user-block__posts');
+
+            const currentString = form.querySelector('.input-user__text');
+            if(currentString) form.removeChild(currentString);
+   
+            const currentUl = userBlock.querySelector('ul');
+            if (currentUl) userBlock.removeChild(currentUl);
+            
             posts.forEach((post) => {
                const listItem = document.createElement('li');
                const itemTable = document.createElement('table');
@@ -108,11 +122,7 @@ document.addEventListener('DOMContentLoaded', function () {
                const usersPost = document.createElement('div');
                const postTitle = document.createElement('h3');
                const postBody = document.createElement('p');
-               
                // Comment announcement
-               const tableRow = document.createElement('tr');
-               const tableData = document.createElement('td');
-               const commentsIcon = document.createElement('div');
                const commentsText = document.createElement('p');
 
                // Adding classes and content
@@ -122,24 +132,18 @@ document.addEventListener('DOMContentLoaded', function () {
                postTitle.textContent = post.title;
                postBody.textContent = post.body;
 
-               tableData.classList.add('post__comments');
-               commentsIcon.classList.add('post__comments-icon');
+               commentsText.classList.add('post__comments');
                commentsText.textContent = 'Comments:';
 
                // Joining rows elements
                usersPost.appendChild(postTitle);
                usersPost.appendChild(postBody);
                tableDataPost.appendChild(usersPost);
+               tableDataPost.appendChild(commentsText);
                tableRowPost.appendChild(tableDataPost);
               
-               tableData.appendChild(commentsIcon);
-               tableData.appendChild(commentsText);
-               tableRow.appendChild(tableData);
-               
                itemTable.appendChild(tableRowPost);
-               itemTable.appendChild(tableRow);
-
-
+               
                // Generating post comments 
                fetch(`https://jsonplaceholder.typicode.com/comments?postId=${post.id}`)
                .then(response => response.json())
@@ -149,7 +153,7 @@ document.addEventListener('DOMContentLoaded', function () {
                      const tableDataComment = document.createElement('td');
                      const commentUser = document.createElement('div');
                      const commentUserIcon = document.createElement('div');
-                     const commentUserEmail = document.createElement('h5');
+                     const commentUserEmail = document.createElement('p');
                      const commentTitle = document.createElement('h4');
                      const commentBody = document.createElement('p');
                      // Adding classes and content
@@ -164,7 +168,7 @@ document.addEventListener('DOMContentLoaded', function () {
                      commentUser.appendChild(commentUserEmail);
                      tableDataComment.appendChild(commentUser);
                      tableDataComment.appendChild(commentTitle);
-                     tableDataComment.apappendChild(commentBody);
+                     tableDataComment.appendChild(commentBody);
                      tableRowComment.appendChild(tableDataComment);
 
                      itemTable.appendChild(tableRowComment);
@@ -175,8 +179,12 @@ document.addEventListener('DOMContentLoaded', function () {
                
                listItem.appendChild(itemTable);
                postsList.appendChild(listItem);
-            });
+               userBlock.appendChild(postsList);
+               
               
+            });
+            
+            console.log(postsList); 
          })
          .catch((error) => console.log(error)) 
       };
