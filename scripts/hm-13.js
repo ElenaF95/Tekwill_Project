@@ -9,9 +9,9 @@ const text = 'City postal codes: 12345, 98765, 54321';
 const codesRegex = /\b\d{5}\b/g;
 
 if (codesRegex.test(text)) {
-   console.log('The postal codes are valid');
+   console.log('The postcodes are valid');
 } else {
-   console.log('The postal codes are not valid');
+   console.log('The postcodes are not valid');
 }
 
 //----------3----------//
