@@ -44,15 +44,35 @@ document.addEventListener('DOMContentLoaded', function () {
   function handleClick(event) {
     event.preventDefault();
     const userId = input.value;
-    let todosList
-
-    fetch (`https://jsonplaceholder.typicode.com/todos?userId=${userId}`)
+    
+    if (userId > 0 && userId <= 10) {
+      fetch (`https://jsonplaceholder.typicode.com/todos?userId=${userId}`)
       .then((response) => response.json())
       .then((todos) => {
-        todosList = todos;
         generateTodos(todos);
       })
       .catch((error) => console.log(error))
+    } else {
+      const todosWrapper = document.getElementById('todos');
+      const currentUl = todosWrapper.querySelector('ul');
+      if (currentUl) todosWrapper.removeChild(currentUl);
+
+      const errorMessage = document.getElementById('error');
+      const errorIcon = document.createElement('div');
+      const errorText = document.createElement('p');
+      errorText.textContent = 'Incorrect value. Please enter the ID corresponding to the user in the list.';
+      
+      const currentErrorIcon = errorMessage.querySelector('div');
+      const currentErrorText = errorMessage.querySelector('p');
+      if (currentErrorIcon, currentErrorText) {
+        errorMessage.removeChild(currentErrorIcon);
+        errorMessage.removeChild(currentErrorText);
+      }
+      
+      errorMessage.appendChild(errorIcon);
+      errorMessage.appendChild(errorText);
+    }
+    
     
     const generateTodos = (todos) => {
       const ul = document.createElement('ul');
@@ -61,6 +81,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
       const currentUl = todosWrapper.querySelector('ul');
       if (currentUl) todosWrapper.removeChild(currentUl);
+
+      const errorMessage = document.getElementById('error');
+      const currentErrorIcon = errorMessage.querySelector('div');
+      const currentErrorText = errorMessage.querySelector('p');
+      if (currentErrorIcon, currentErrorText) {
+        errorMessage.removeChild(currentErrorIcon);
+        errorMessage.removeChild(currentErrorText);
+      }
 
       todos.forEach((todo) => {
         const li = document.createElement('li');

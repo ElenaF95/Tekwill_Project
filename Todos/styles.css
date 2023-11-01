@@ -69,6 +69,22 @@ label {
 .get-todos-btn:hover {
   background-color: #0056b3;
 }
+#error {
+  display: flex;
+  align-items: center;
+}
+#error div {
+  background: url(/icons/warningI.png);  
+  background-size: cover;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+#error p {
+  color: #B71C1C;
+  font-size: 14px;
+}
 
 h2 {
   color: #555;
