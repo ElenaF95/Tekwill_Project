@@ -27,11 +27,21 @@ const filmsList = [
    '9 The Lord of the Rings: The Return of the King (2003)',
    '10 Fight Club (1999)'
 ];
-const filmsString = filmsList.join();
+// const filmsString = filmsList.join();
 
-const filmsRegex = /\d+ [\s\w:,`]+ \((199[0-9]|20[0-2]\d)\)/g;
-const films = filmsString.match(filmsRegex);
-console.log(films);
+// const filmsRegex = /\d+ [\s\w:,`]+ \((199[0-9]|20[0-2]\d)\)/g;
+// const films = filmsString.match(filmsRegex) || [];
+// console.log(films);
+
+const filmsRegex = /\d{4}/g;
+
+filmsList.forEach(film => {
+   const filmsYear = film.match(filmsRegex)[0];
+
+   if(filmsYear > 1990) {
+      console.log(film);
+   }
+})
        
 //----------4----------//
 const colorsList = [
