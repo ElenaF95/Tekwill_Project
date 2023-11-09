@@ -52,7 +52,27 @@ document.addEventListener('DOMContentLoaded', function () {
         generateTodos(todos);
       })
       .catch((error) => console.log(error))
+    } else if (!userId) {
+      const todosWrapper = document.getElementById('todos');
+      const currentUl = todosWrapper.querySelector('ul');
+      if (currentUl) todosWrapper.removeChild(currentUl);
+
+      const errorMessage = document.getElementById('error');
+      const errorIcon = document.createElement('div');
+      const errorText = document.createElement('p');
+      errorText.textContent = 'Please enter the user ID.';
+      
+      const currentErrorIcon = errorMessage.querySelector('div');
+      const currentErrorText = errorMessage.querySelector('p');
+      if (currentErrorIcon, currentErrorText) {
+        errorMessage.removeChild(currentErrorIcon);
+        errorMessage.removeChild(currentErrorText);
+      }
+      
+      errorMessage.appendChild(errorIcon);
+      errorMessage.appendChild(errorText);
     } else {
+
       const todosWrapper = document.getElementById('todos');
       const currentUl = todosWrapper.querySelector('ul');
       if (currentUl) todosWrapper.removeChild(currentUl);
