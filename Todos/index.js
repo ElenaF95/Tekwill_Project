@@ -36,10 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Check if button is not null
     button.addEventListener('click', handleClick);
   }
-
-  if (checkbox) {
-    checkbox.addEventListener('change', handleCheckboxChange);
-  }
+  
   // Event handler function
   function handleClick(event) {
     event.preventDefault();
@@ -115,13 +112,19 @@ document.addEventListener('DOMContentLoaded', function () {
         const spanTitle = document.createElement('span');
         const spanCompleted = document.createElement('span');
         const checkbox = document.createElement('input');
+       
         spanTitle.classList.add('todo-title');
         spanTitle.textContent = todo.title;
         spanCompleted.classList.add('todo-completed');
-        spanCompleted.textContent = todo.completed ? 'Done' : 'Not done';
+        spanCompleted.textContent = 'Awaiting';
+       
+        const todoId = todo.id;
         checkbox.type = 'checkbox';
         checkbox.classList.add('checkbox');
-        checkbox.id = `checkbox_${todo.id}`;
+        checkbox.id = `checkbox_${todoId}`;
+        checkbox.addEventListener('change',(e)=> {
+          handleCheckboxChange(todoId, e.target.checked);
+        });
       
         li.append(checkbox);
         li.append(spanTitle);
@@ -132,9 +135,29 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  function handleCheckboxChange() {
-    console.log('Checked', this.checked);
+  async function handleCheckboxChange(todoId, todoStatus) {
+    try {
+      const response = await fetch(`https://jsonplaceholder.typicode.com/todos/${todoId}`,{ 
+      method: 'PUT',
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ completed: todoStatus }),
+      });
+      const result = await response.json();
+      
+      console.log("Success:", result);
+      
+      const checkbox = document.getElementById(`checkbox_${todoId}`);
+      const li = checkbox.closest('li'); 
+      const spanCompleted = li.querySelector('.todo-completed')
+      spanCompleted.textContent = result.completed ? 'Done' : 'Awaiting';
+      
+    } catch (error) {
+      console.error("Error:", error);
+      }  
   }
+  
 });
 
 // 1. Get real users list from https://jsonplaceholder.typicode.com/
