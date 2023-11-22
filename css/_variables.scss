@@ -20,5 +20,10 @@ $primary-buttonColor: #FFA62B;
    cursor: pointer;
 
 }
-
+ @mixin tableDataStyle {
+   background-color: $input-color;
+   border: 1px solid $supplemental-color1;
+   border-radius: 5px;
+   padding: 10px 15px 15px 15px;
+ }
 

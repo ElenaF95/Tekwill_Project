@@ -166,12 +166,12 @@ document.addEventListener('DOMContentLoaded', function () {
                      const commentUser = document.createElement('div');
                      const commentUserIcon = document.createElement('div');
                      const commentUserEmail = document.createElement('p');
-                     const commentTitle = document.createElement('span');
+                     const commentTitle = document.createElement('h6');
                      const commentBody = document.createElement('p');
                      // Adding classes and content
                      tableDataComment.classList.add('user__feedback');
-                     commentUser.classList.add('comments__user');
-                     commentUserIcon.classList.add('comments__user-icon');
+                     commentUser.classList.add('commented-user');
+                     commentUserIcon.classList.add('commented-user__icon');
                      commentUserEmail.textContent = comment.email;
                      commentTitle.textContent = comment.name;
                      commentBody.textContent = comment.body;
