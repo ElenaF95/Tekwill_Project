@@ -1,0 +1,24 @@
+//------COLORS------//
+$main-darkColor:#252B42;
+$main-lightColor: #ffffff;
+$supplemental-color1: #737373;
+$supplemental-color2: #BDBDBD;
+
+$input-color:#F9F9F9;
+
+$border-color1:#dedede;
+$border-color2:#E6E6E6;
+
+//------BUTTONS------//
+$primary-buttonColor: #FFA62B;
+
+%primary-button {
+   display: flex;
+   background-color: $primary-buttonColor;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+
+}
+
+

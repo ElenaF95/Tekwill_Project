@@ -1,0 +1,130 @@
+@use 'variables';
+@use 'fontsStyles';
+
+.user-block {
+   background: linear-gradient(variables.$main-darkColor 70%, #0b3f3d 100%);
+   width: 100%;
+   padding: 50px 0;
+   
+   &__form {
+      margin-bottom: 30px;
+
+      .input-user {
+         display: flex;
+         margin-left: 2px;
+
+         &__name {
+            width: 350px;
+            background-color: variables.$input-color;
+            border: 1px solid variables.$supplemental-color2;
+            border-radius: 5px; 
+            padding: 10px 20px; 
+            margin-right: 20px;
+            @include fontsStyles.fontSize;
+            @include fontsStyles.fontOption3($fontW: 600);
+         }
+
+         &__button-posts {
+            @extend %primary-button;
+            padding: 10px 35px;
+         
+            @include fontsStyles.fontSize;
+            @include fontsStyles.fontOption3;
+            color: variables.$main-lightColor;
+         }
+      }
+      .user-block__error-string {
+         align-items: center;
+         display: flex;
+         margin-left: 2px;
+
+         .user-block__error-icon {
+            background: url(/icons/warning.png);  
+            background-size: cover;
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+         }
+         .user-block__error-message{
+            color: variables.$main-lightColor;
+            @include fontsStyles.fontSize($size: 12px);
+            @include fontsStyles.fontOption3($fontW: 400); 
+            margin: 0px 0px;
+         }
+      }
+   }
+   .posts-list  {
+      & li {
+         margin-bottom: 30px;
+         
+         .user__post {
+            border: none;
+            width: 1020px;
+            
+            
+         }
+      }
+   }
+}
+.posts-count {
+   @include fontsStyles.fontSize($size: 18px);
+   @include fontsStyles.fontOption4($fontW: 600);
+   color: variables.$main-lightColor;
+   margin-left: 2px;
+}
+.user__post td {
+   background-color: variables.$input-color;
+   border: 1px solid variables.$supplemental-color1;
+   border-radius: 5px;
+   padding: 10px 15px 15px 15px;
+}
+  
+.post__message h3 {
+   @include fontsStyles.fontSize($size: 18px);
+   @include fontsStyles.fontOption4($fontW: 500);
+   color: variables.$primary-buttonColor;
+   margin: 0px 0px 10px 0px;
+}
+.post__message p,.user__feedback span {
+   @include fontsStyles.fontSize;
+   @include fontsStyles.fontOption2($fontW: 500);
+   color: variables.$main-darkColor;
+   margin: 0px 0px;
+   
+}
+.post__message {
+   margin-bottom: 40px;
+}
+.post__comments {
+   color: variables.$supplemental-color1;
+   align-items: center;
+   padding-top: 10px;
+   margin-top: 10px;
+   border-top: 1px solid variables.$supplemental-color2;
+   width: auto; 
+}
+.post__comments,
+.user__feedback p,
+.comments__user p {
+   @include fontsStyles.userText;
+  
+}
+.user__feedback {
+   background-color: variables.$input-color;
+   color: variables.$supplemental-color1;
+}
+.comments__user {
+   display: flex;
+   align-items: center;
+   padding-bottom: 10px;
+   margin-bottom: 10px;
+   border-bottom: 1px solid variables.$supplemental-color2;
+   width: auto;
+}
+.comments__user-icon {
+   background: url(/icons/user.png);  
+   background-size: cover;
+   width: 24px;
+   height: 24px;
+   margin-right: 20px;
+}
