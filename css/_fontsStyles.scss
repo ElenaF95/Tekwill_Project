@@ -11,25 +11,37 @@ $letter-spacing2: 0.2px;
 }
 
 //-----FONT-OPTIONS-----//
-@mixin fontOption1($fontW: 500) {
+@mixin lineHeight20($fontW: 500) {
    line-height: 20px;
    font-weight: $fontW;
 }
-@mixin fontOption2($fontW: 600) {
+@mixin lineHeight24($fontW: 600) {
    line-height: 24px;
    font-weight: $fontW;
 }
-@mixin fontOption3($fontW: 700) {
+@mixin lineHeight26($fontW: 700) {
+   line-height: 26px;
+   font-weight: $fontW;
+}
+@mixin lineHeight28($fontW: 700) {
    line-height: 28px;
    font-weight: $fontW;
 }
-@mixin fontOption4($fontW: 800) {
+@mixin lineHeight30($fontW: 700) {
+   line-height: 30px;
+   font-weight: $fontW;
+}
+@mixin lineHeight32($fontW: 800) {
    line-height: 32px;
+   font-weight: $fontW;
+}
+@mixin lineHeight80($fontW: 800) {
+   line-height: 80px;
    font-weight: $fontW;
 }
 
 @mixin userText {
    @include fontSize($size: 12px);
-   @include fontOption2($fontW: 500);
+   @include lineHeight24($fontW: 500);
    margin: 0px 0px;
 }

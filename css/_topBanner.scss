@@ -1,0 +1,95 @@
+@use 'fontsStyles';
+@use 'variables';
+
+/*---HEADER-----------------------------------------*/
+.top-banner__content {
+   @include variables.backgroundImgSetting;
+   padding: 40px 0 120px 0;
+}
+.header {
+   width: 100%;
+   display: flex;
+   align-items: center;
+   margin-bottom: 160px;
+   position: sticky;
+
+   &__logo {
+      color: variables.$main-lightColor;
+      @include fontsStyles.fontSize($size: 24px);
+      letter-spacing: 0.1px;
+      @include fontsStyles.lineHeight32($fontW: 700);
+      text-decoration: none;
+   }
+   &__menu {
+      margin-left: auto;
+      display: flex;
+
+      .menu__list {
+         @include variables.listSetting;
+         display: flex;
+         gap: 20px;
+
+         .item__link {
+            color: variables.$main-lightColor;
+            @include fontsStyles.fontSize;
+            @include fontsStyles.lineHeight24;
+            text-decoration: none;
+         }
+      }
+   }
+   &__action-bar {
+      @include variables.listSetting;
+      display: flex;
+      margin-left: 40px;
+      gap: 20px;
+
+      .action__item { 
+         line-height: 24px;
+         height: 16px;
+         width: 16px;
+         background: transparent;
+         border: none; 
+         cursor: pointer;
+      }
+   }
+}
+/*---TOP-BANNER CONTENT-----------------------------------------*/
+.top-banner {
+   max-width: 570px;
+   align-items: center;
+   gap: 40px;
+   margin: 0 auto; 
+
+   &__title {
+      color: variables.$main-lightColor;
+      @include fontsStyles.fontSize($size: 58px);
+      @include fontsStyles.lineHeight80;
+      text-align: center;
+      margin: 0px 0px 40px 0px;
+   }
+   &__subtitle{
+      color: variables.$main-lightColor;
+      @include fontsStyles.fontSize($size: 20px);
+      @include fontsStyles.lineHeight30($fontW: 500);
+      text-align: center; 
+      margin-bottom: 40px;
+   }
+   &__buttons{
+      display:flex;
+      justify-content: center;
+      gap: 10px;
+
+      .top-banner__button{
+         @extend %primary-button;
+         border-radius: 40px;
+        
+         @include fontsStyles.fontSize;
+         @include fontsStyles.lineHeight26; 
+         text-decoration: none;
+      }
+      .top-banner__button-border{
+         background: transparent;
+         border: 1px solid variables.$main-lightColor;
+      }
+   }
+}

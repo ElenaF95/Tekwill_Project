@@ -21,16 +21,14 @@
             padding: 10px 20px; 
             margin-right: 20px;
             @include fontsStyles.fontSize;
-            @include fontsStyles.fontOption3($fontW: 600);
+            @include fontsStyles.lineHeight28($fontW: 600);
          }
 
          &__button-posts {
             @extend %primary-button;
-            padding: 10px 35px;
-         
+           
             @include fontsStyles.fontSize;
-            @include fontsStyles.fontOption3;
-            color: variables.$main-lightColor;
+            @include fontsStyles.lineHeight28;
          }
          &__button-posts:hover {
             background: darken(variables.$primary-buttonColor, 10%);
@@ -51,21 +49,22 @@
          .user-block__error-message{
             color: variables.$main-lightColor;
             @include fontsStyles.fontSize($size: 12px);
-            @include fontsStyles.fontOption3($fontW: 400); 
+            @include fontsStyles.lineHeight28($fontW: 400); 
             margin: 0px 0px;
          }
       }
    }
    .users-posts {
+      @include variables.listSetting;
       .posts-count {
          @include fontsStyles.fontSize($size: 18px);
-         @include fontsStyles.fontOption4($fontW: 600);
+         @include fontsStyles.lineHeight32($fontW: 600);
          color: variables.$main-lightColor;
          margin-left: 2px;
       }
      
       .posts-list  {
-         & li {
+         li {
             margin-bottom: 30px;
             
             .user__post {
@@ -77,14 +76,14 @@
                   
                   &__message h3 {
                      @include fontsStyles.fontSize($size: 18px);
-                     @include fontsStyles.fontOption4($fontW: 500);
+                     @include fontsStyles.lineHeight32($fontW: 500);
                      color: variables.$primary-buttonColor;
                      margin-top: 0px;
                      margin-bottom: 10px;
                   }
                   &__message p {
                      @include fontsStyles.fontSize;
-                     @include fontsStyles.fontOption2($fontW: 500);
+                     @include fontsStyles.lineHeight24($fontW: 500);
                      color: variables.$main-darkColor;
                      margin-bottom: 40px;  
                   }
@@ -116,20 +115,20 @@
                         height: 24px;
                         margin-right: 15px;
                      }
-                     & p {
+                     p {
                         @include fontsStyles.userText;
                         color: variables.$supplemental-color1;
                      }
                   }
-                  & h6 {
+                  h6 {
                      @include fontsStyles.fontSize;
-                     @include fontsStyles.fontOption2($fontW: 500);
+                     @include fontsStyles.lineHeight24($fontW: 500);
                      color: variables.$main-darkColor;
                      margin-top: 0px;
                      margin-bottom: 10px;
                      
                   }
-                  & p {
+                  p {
                      @include fontsStyles.userText;
                      color: variables.$supplemental-color1;
                   }
