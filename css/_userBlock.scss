@@ -29,9 +29,11 @@
            
             @include fontsStyles.fontSize;
             @include fontsStyles.lineHeight28;
+            @include variables.buttonHover;
          }
          &__button-posts:hover {
-            background: darken(variables.$primary-buttonColor, 10%);
+            background: darken(variables.$primary-buttonColor, 15%);
+            @include variables.buttonHover;
          }
       }
       .user-block__error-string {
@@ -55,7 +57,6 @@
       }
    }
    .users-posts {
-      @include variables.listSetting;
       .posts-count {
          @include fontsStyles.fontSize($size: 18px);
          @include fontsStyles.lineHeight32($fontW: 600);
@@ -64,6 +65,7 @@
       }
      
       .posts-list  {
+         @include variables.listSetting;
          li {
             margin-bottom: 30px;
             
@@ -89,7 +91,6 @@
                   }
                   &__comments {
                      @include fontsStyles.userText;
-                     color: variables.$supplemental-color1;
                      align-items: center;
                      padding-top: 10px;
                      margin-top: 10px;
@@ -117,7 +118,6 @@
                      }
                      p {
                         @include fontsStyles.userText;
-                        color: variables.$supplemental-color1;
                      }
                   }
                   h6 {
@@ -129,8 +129,7 @@
                      
                   }
                   p {
-                     @include fontsStyles.userText;
-                     color: variables.$supplemental-color1;
+                     @include fontsStyles.userText;  
                   }
                }
             }

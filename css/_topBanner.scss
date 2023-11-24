@@ -86,10 +86,20 @@
          @include fontsStyles.fontSize;
          @include fontsStyles.lineHeight26; 
          text-decoration: none;
+         
+         @include variables.buttonHover;
+      }
+      .top-banner__button-orange:hover {
+         background: darken(variables.$primary-buttonColor, 15%);
+         @include variables.buttonHover;
       }
       .top-banner__button-border{
          background: transparent;
          border: 1px solid variables.$main-lightColor;
+      }
+      .top-banner__button-border:hover {
+         background: darken(rgba(0, 0, 0, 0.4), 15%);
+         @include variables.buttonHover;
       }
    }
 }

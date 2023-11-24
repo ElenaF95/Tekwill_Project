@@ -21,8 +21,13 @@ $primary-buttonColor: #FFA62B;
   color: $main-lightColor;
   align-items: center;
   cursor: pointer;
-
 }
+@mixin buttonHover {
+  transition: all .3s linear;
+  -webkit-transition: all .3s linear;
+  -moz-transition: all .3s linear; 
+}
+
 //------FORMS------//
 @mixin tableDataStyle {
   background-color: $input-color;

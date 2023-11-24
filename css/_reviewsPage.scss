@@ -1,0 +1,75 @@
+@use 'variables';
+@use 'fontsStyles';
+
+.reviews-section,
+.teams-section{
+    background-color: #252B42;
+    width: 100%;
+    padding: 80px 0 100px 0;
+}
+.reviews-section__title {
+   @include fontsStyles.sectionTitle;
+}
+.reviews-section__subtitle,
+.teams-section__subtitle{
+   @include fontsStyles.sectionSubtitle;
+   margin: 0px 0px 80px 0px;
+}
+.reviews-section__grid-container,
+.teams-section__grid-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 30px;
+}
+.reviews-section__grid-item {
+   background-color: #ffffff;
+}
+.reviews-section__grid-item{
+   padding: 30px 35px;
+   align-items: center;
+   border-radius: 5px;
+   border: 1px solid #dedede;
+}
+.reviews-section__rating{
+   display: flex;
+   margin-top: 0px;
+   margin-bottom: 20px;
+}
+.rating__score{
+   width: 22px;
+}
+.reviews-section__client-message,
+.team-member__profession{
+    color: #737373;
+    font-weight: 600;
+    font-size: inherit;
+    line-height: 24px;
+    letter-spacing: 0.2px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+.reviews-section__client{
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+.reviews-section__clients-photo{
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+}
+.reviews-section__clients-fullname{
+    color: #FFA62B;
+    font-weight: 600;
+    line-height: 24px; 
+    letter-spacing: 0.2px;
+    text-decoration: none;
+    margin: 0 0;
+}
+.reviews-section__clients-profession{
+    color: #252B42;
+    font-weight: 600;
+    line-height: 24px; 
+    letter-spacing: 0.2px;
+    margin: 0 0;
+}
