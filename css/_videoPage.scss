@@ -1,45 +1,100 @@
 @use 'variables';
 @use 'fontsStyles';
 
-.video-section{
+.video-section__content{
    background: linear-gradient(#252B42 50%, #0b3f3d 100%);
    width: 100%;
    padding: 80px 0;
-}
-.video-section__heading{
-   max-width: 470px;
-   margin: 0 auto;
-}
-.video-section__title {
-   @include fontsStyles.sectionTitle;
-}
-.video-section__subtitle{
-   @include fontsStyles.sectionSubtitle;
-   margin: 0px 0px 50px 0px;
-}
 
-.video-section__movie{
+	.video-section {
+		position: relative;
+
+		&__heading{
+			max-width: 470px;
+			margin: 0 auto;
+
+			.video-section__title {
+				@include fontsStyles.sectionTitle;
+			}
+			.video-section__subtitle{
+				@include fontsStyles.sectionSubtitle;
+				margin: 0px 0px 50px 0px;
+			}
+		}
+	}
+}
+#video {
+   width: 100%;
    position: relative;
+
+   &-over {
+      position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 1;
+		display: none;
+   }
+   &-play {
+      position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		margin: auto;
+		width: 90px;
+      height: 90px;
+		border-radius: 50%;
+		background-color: #00A0C1;
+		z-index: 1;
+		cursor: pointer;
+		transition: .2s ease;
+		transition-property: opacity, visibility;
+
+      &::before {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			margin: auto;
+			left: 38px;
+			width: 0;
+			height: 0;
+			border: 20px solid transparent;
+			border-top-width: 12px;
+			border-bottom-width: 12px;
+			border-left-color: variables.$main-lightColor;
+			border-right-width: 0;
+			transition: transform .2s ease;
+		}
+      &:hover {
+			&::before {
+				transform: scale(1.2);
+			}
+		}
+   }
+   video {
+      width: 100%;
+      display: block;
+   }
+   &.video-is-playing {
+		#video-over {
+			display: block;
+		}
+
+		#video-play {
+			opacity: 0;
+			visibility: hidden;
+		}
+	
+	}
 }
 .video-section__movie-file{
+   object-fit: cover;
    width: 100%;
+	max-width: 1020px;
+   height: 515px;
+	margin: auto;
 }
-.video__button-play{
-   width: 24px;
-}
-.video-section__movie-button{
-   position: absolute;
-   top: 50%;
-   right: 50%;
-   transform: translate(50px, -50%);
-   -ms-transform: translate(50%, -50%);
-   padding: 35px 37px;
-   border: none;
-   border-radius: 100%; 
-   background-color: #00A0C1;
-   cursor: pointer;
-   text-align: center;
-}
-
-
-
