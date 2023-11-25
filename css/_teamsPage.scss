@@ -1,7 +1,11 @@
 @use 'variables';
 @use 'fontsStyles';
 
-
+.teams-section{
+   background-color: #252B42;
+   width: 100%;
+   padding: 80px 0 100px 0;
+}
 .teams-section__title{
    @include fontsStyles.sectionTitle;
 }
