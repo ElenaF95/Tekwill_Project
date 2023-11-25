@@ -12,6 +12,10 @@ $letter-spacing2: 0.2px;
 }
 
 //-----FONT-OPTIONS-----//
+@mixin lineHeight18($fontW: 500) {
+   line-height: 20px;
+   font-weight: $fontW;
+}
 @mixin lineHeight20($fontW: 500) {
    line-height: 20px;
    font-weight: $fontW;

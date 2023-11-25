@@ -23,7 +23,9 @@
             @include fontsStyles.fontSize;
             @include fontsStyles.lineHeight28($fontW: 600);
          }
-
+         input[type="text"]::-webkit-input-placeholder {
+            color: variables.$supplemental-color2;
+         } 
          &__button-posts {
             @extend %primary-button;
            
