@@ -21,46 +21,54 @@
             grid-template-columns: 1fr 1fr 1fr;
             grid-gap: 30px;
 
-            .reviews-section__grid-item{
-                background-color: variables.$main-lightColor;
-                padding: 30px 35px;
-                align-items: center;
-                border-radius: 5px;
-                border: 1px solid variables.$border-color1;
-            
-                .reviews-section__rating{
-                    @include variables.listSetting;
-                    display: flex;
-                    margin-top: 0px;
-                    margin-bottom: 20px;
-
-                    .rating__score{
-                        width: 22px;
-                    }
-                }
-                .reviews-section__client-message {
-                    @include fontsStyles.blockText;
-                }
-                .reviews-section__client{
-                    display: flex;
-                    margin-top: 20px;
-                    margin-bottom: 0px;
-
-                    .reviews-section__clients-photo{
-                        width: 50px;
-                        height: 50px;
-                        margin-right: 15px;
-                    }
-                    .reviews-section__clients-fullname{
-                        @include fontsStyles.blockText($textColor: variables.$primary-buttonColor);
-                        text-decoration: none;
-                    }
-                    .reviews-section__clients-profession{
-                        @include fontsStyles.blockText($textColor: variables.$main-darkColor);
-                    }
-                }
-            }
+           
         }
     }
 }
+.reviews-section__grid-item{
+    background-color: variables.$main-lightColor;
+    padding: 30px 35px;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid variables.$border-color1;
 
+    .reviews-section__rating{
+        @include variables.listSetting;
+        display: flex;
+        margin-top: 0px;
+        margin-bottom: 20px;
+
+        .rating__score{
+            width: 22px;
+        }
+    }
+    .reviews-section__client-message {
+        @include fontsStyles.blockText;
+    }
+    .reviews-section__client{
+        display: flex;
+        margin-top: 20px;
+        margin-bottom: 0px;
+
+        .reviews-section__clients-photo{
+            width: 50px;
+            height: 50px;
+            margin-right: 15px;
+        }
+        .reviews-section__clients-fullname{
+            @include fontsStyles.blockText($textColor: variables.$primary-buttonColor);
+            text-decoration: none;
+        }
+        .reviews-section__clients-profession{
+            @include fontsStyles.blockText($textColor: variables.$main-darkColor);
+        }
+    }
+}
+.swiper {
+   width: 100%;
+   height: 250px;
+   margin-top: 80px; 
+}
+.swiper-slide {
+    display: flex;
+}

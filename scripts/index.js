@@ -1,3 +1,10 @@
+import Swiper from 'swiper';
+import { Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+
 document.addEventListener('DOMContentLoaded', function () {
     //-----------VIDEO-SECTION----------------------//
     const videoContainer = document.getElementById('video');
@@ -14,6 +21,35 @@ document.addEventListener('DOMContentLoaded', function () {
             video.load();
         }
     });
+
+    //--------------REVIEWS-SECTION-----------------------//
+    new Swiper(".swiper", {
+        modules: [Navigation, Pagination],
+        slidesPerView: 1,
+        spaceBetween: 30,
+        breakpoints: {
+            320: {
+              slidesPerView: 1
+            },
+            480: {
+              slidesPerView: 2,
+              spaceBetween: 20
+            },
+            600: {
+              slidesPerView: 3,
+              spaceBetween: 30
+            }
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          type: "progressbar"
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev"
+        }
+    });
+
     //--------------TEAMS-SECTION-----------------------//
     const initMySlider = () => {
         const width = 305;
