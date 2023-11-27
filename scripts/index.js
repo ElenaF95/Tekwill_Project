@@ -14,6 +14,35 @@ document.addEventListener('DOMContentLoaded', function () {
             video.load();
         }
     });
+    //--------------TEAMS-SECTION-----------------------//
+    const initMySlider = () => {
+        const width = 305;
+        const slidesPerView = 3;
+        let position = 0;
+        const slidesList = document.querySelector('.teams-carousel__list');
+        const slides = document.querySelectorAll('.teams-carousel__item');
+        const nextButton = document.querySelector('.arrow--next');
+        const prevButton = document.querySelector('.arrow--prev');
+        
+        nextButton.addEventListener('click', nextClicked);
+        prevButton.addEventListener('click', prevClicked);
+
+        function nextClicked() {
+            position -= width * slidesPerView;
+        
+            position = Math.max(position, -width * (slides.length - slidesPerView));
+            console.log('next:', position);
+            slidesList.style.marginLeft = position + 'px';
+        }
+        function prevClicked() {
+            position += width * slidesPerView;
+            
+            position = Math.min(position, 0);
+            console.log('prev:',position);
+            slidesList.style.marginLeft = position + 'px';
+        }
+    }
+    initMySlider();
 
     //-----------RECORDING-SECTION----------------------//
     let form = document.querySelector('.recording-section__form');
