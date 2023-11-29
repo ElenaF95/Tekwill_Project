@@ -157,3 +157,53 @@
    background: darken(variables.$primary-buttonColor, 15%);
    @include variables.buttonHover;
 }
+/*---MEDIA-QUERIES-----------------------------------------*/
+@media screen and (min-width: 320px) and (max-width: 480px) {
+   .recording-section__content {
+      .recording-section {
+         margin-right: 0;
+   
+         &__form-heading {
+            .recording-section__description{
+               text-align: center;
+            }
+            .recording-section__title{
+               text-align: center;
+            }
+         }
+         &__form{
+            width: 100%;
+            
+            .recording-section__grid-container{
+               grid-template-columns: 1fr;
+            }
+         }
+      }
+   }
+   /*----------CONTACT-SECTION----------------------------------*/
+   .contact-section__content{
+      .contact-section {
+         display: block;
+         width: 100%;
+         justify-content: center;
+         text-align: center;
+   
+         &__title{
+            width: 260px;
+            margin: 0px auto 10px auto;
+            text-align: center;
+         }
+         &__subtitle{
+            width: 240px;
+            margin: 0px auto;
+         }
+      }
+   }
+   /*----------BUTTONS----------------------------------*/
+   .submit-button__button-contact,
+   .submit-button__button-appointment{
+      width: 100%;
+      justify-content: center;
+      margin: 40px auto 0px auto;
+   }
+}

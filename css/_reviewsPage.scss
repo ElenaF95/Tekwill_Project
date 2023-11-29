@@ -66,9 +66,64 @@
 }
 .swiper {
    width: 100%;
-   height: 250px;
+   height: 100%;
    margin-top: 80px; 
+   
+}
+.swiper-wrapper {
+    display: flex;
 }
 .swiper-slide {
     display: flex;
+}
+/*---MEDIA-QUERIES-----------------------------------------*/
+@media screen and (min-width: 320px) and (max-width: 480px) {
+    .reviews-section__content {
+        .reviews-section {
+            &__heading {
+                .reviews-section__title {
+                    width: 290px;
+                    margin: 0 auto;
+                }
+                .reviews-section__subtitle {
+                    width: 260px;
+					margin: 0px auto 45px auto;
+                }
+            }
+            &__grid-container {
+                grid-template-columns: auto;
+                grid-gap: 15px;
+            }
+        }
+    }
+    .reviews-section__grid-item{
+        padding: 20px 35px;
+    
+        .reviews-section__rating{
+            margin-bottom: 10px;
+    
+            .rating__score{
+                width: 20px;
+
+                img {
+                    width: 18px;
+                }
+            }
+        }
+        .reviews-section__client{
+            margin-top: 10px;
+            align-items: center;
+    
+            .reviews-section__clients-photo{
+                width: 35px;
+                height: 35px;
+            }
+            .reviews-section__clients-fullname{
+                @include fontsStyles.lineHeight20($fontW: 600);
+            }
+            .reviews-section__clients-profession{
+                @include fontsStyles.lineHeight20($fontW: 600);
+            }
+        }
+    }
 }

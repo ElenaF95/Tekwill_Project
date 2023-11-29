@@ -125,3 +125,35 @@
       margin: 0px auto 0px 0px;
    }
 }
+/*---MEDIA-QUERIES-----------------------------------------*/
+@media screen and (min-width: 320px) and (max-width: 480px) {
+   .footer {
+      &__heading{
+         display: block;
+         text-align: center; 
+
+         .footer__logo{
+            display: block;
+            margin-bottom: 20px;
+         }
+         .footer__action-bar{
+            margin-right: 0;
+            justify-content: center;
+   
+            .footer__action-sm-icon{
+               margin: 0;
+               padding: 0;
+               object-fit: cover;
+            }
+         }
+      }
+      &__grid-container{
+         grid-template-columns: auto ;
+      }
+   }
+   .footer-bottom{
+      &__text{
+         text-align: center;
+      }
+   } 
+}

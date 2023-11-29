@@ -80,6 +80,40 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     initMySlider();
 
+    const mediaQuery = window.matchMedia('(max-width: 480px)')
+    
+    function handleTabletChange(e) {
+        if (e.matches) {
+            console.log('Media Query Matched!')
+            const itemWidth = 210;
+            const itemsPerView = 1;
+            let initPosition = 0;
+            const itemsList = document.querySelector('.teams-carousel__list');
+            const items = document.querySelectorAll('.teams-carousel__item');
+            const nextBtn = document.querySelector('.arrow--next');
+            const prevBtn = document.querySelector('.arrow--prev');
+            
+            nextBtn.addEventListener('click', nextClicked);
+            prevBtn.addEventListener('click', prevClicked);
+
+            function nextClicked() {
+                initPosition -= itemWidth * itemsPerView;
+            
+                initPosition = Math.max(initPosition, -itemWidth * (items.length - itemsPerView));
+                console.log('next:', initPosition);
+                itemsList.style.marginLeft = initPosition + 'px';
+            }
+            function prevClicked() {
+                initPosition += itemWidth * itemsPerView;
+                
+                initPosition = Math.min(initPosition, 0);
+                console.log('prev:',initPosition);
+                itemsList.style.marginLeft = initPosition + 'px';
+            }
+        }
+    }
+    handleTabletChange(mediaQuery)
+
     //-----------RECORDING-SECTION----------------------//
     let form = document.querySelector('.recording-section__form');
     
