@@ -1,0 +1,159 @@
+@use 'variables';
+@use 'fontsStyles';
+
+.recording-section__content {
+   @include variables.backgroundImgSetting($backgroundImg: url(/img/background-contact.png));
+   padding: 90px 0;
+
+   .recording-section {
+      margin-right: auto;
+
+      &__form-heading {
+         margin-bottom: 40px;
+
+         .recording-section__description{
+            @include fontsStyles.fontSize($size: 16px);
+            @include fontsStyles.lineHeight24($fontW: 700);
+            color: variables.$main-lightColor;
+            letter-spacing: 0.1px;
+            margin-bottom: 0px;
+            margin-top: 0px;
+         }
+         .recording-section__title{
+            @include fontsStyles.sectionTitle;
+            text-align: left;
+         }
+      }
+      &__form{
+         width: 600px;
+         
+         .recording-section__grid-container{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 20px;
+            margin-bottom: 20px;
+         }
+      }
+   }
+}
+/*----------------FORMS---------------------------------*/
+.recording-section__grid-item{
+   display:inline-block;
+   width: 100%;
+
+   input[type="text"]::-webkit-input-placeholder,
+   input[type="email"]::-webkit-input-placeholder,
+   textarea::-webkit-input-placeholder,
+   select {
+      color: variables.$supplemental-color2;
+   } 
+   ::-webkit-calendar-picker-indicator {
+      color: transparent;
+      opacity: 1;
+      background: url(/icons/arrow-down.png) no-repeat center;
+      background-size: 18px;
+   }
+   #select-time__form,
+   #select-date__form{
+      appearance: none;  
+      background-image: url(/icons/arrow-down.png); 
+      background-repeat: no-repeat, repeat;
+      background-position: right 20px top 15px;
+      background-size: 18px;
+      height: 50px;  
+   }  
+   #recording-section__input-fullname,
+   #recording-section__input-email{
+      height: 50px;
+   }
+   #recording-section__message-field{
+      resize: none;
+      height: 140px;
+   }
+
+   .recording-section__forms{
+      display: flex;
+      width: 100%;
+      border: 1px solid variables.$supplemental-color2;
+      border-radius: 5px; 
+      padding: 15px 20px;
+      background-color: variables.$input-color;
+      @include fontsStyles.fontSize;
+      @include fontsStyles.lineHeight20($fontW: 600);
+      box-sizing: border-box;
+      margin: 0;
+   }
+   /*---VALIDATION----------------------------------------------*/
+   .recording-section__forms.success{
+      color: #000000;
+   }
+   
+   .recording-section__forms.error{
+      border: 1px solid #B71C1C;
+   }
+   .recording-section__form-text{
+      @include fontsStyles.fontSize($size: 12px);
+      @include fontsStyles.lineHeight18($fontW: 600);
+      margin: 0px 5px;
+   }
+}
+.recording-section__grid-item.success {
+   color: #004D40;
+}
+.recording-section__grid-item.error {
+   color: #B71C1C;
+}
+
+/*----------CONTACT-SECTION----------------------------------*/
+.contact-section__content{
+   background: #FAFAFA;
+   width: 100%;
+   padding: 40px 0px;
+
+   .contact-section {
+      display: flex;
+      width: 100%;
+      align-items: center;
+
+      &__title{
+         @include fontsStyles.fontSize($size: 24px);
+         @include fontsStyles.lineHeight32($fontW: 700);
+         color: variables.$main-darkColor;
+         letter-spacing: 0.1px;
+         margin-bottom: 10px;
+         margin-top: 0px;
+         align-items: center;
+      }
+      &__subtitle{
+         @include fontsStyles.fontSize;
+         @include fontsStyles.lineHeight20;
+         color: variables.$supplemental-color1;
+         margin-bottom: 0px;
+         margin-top: 0px;
+         align-items: center;
+      }
+   }
+}
+/*----------BUTTONS----------------------------------*/
+.submit-button__button-contact,
+.submit-button__button-appointment{
+   @extend %primary-button;
+   padding: 15px 40px;
+
+   @include fontsStyles.fontSize;
+   @include fontsStyles.lineHeight28;
+   @include variables.buttonHover;
+}
+
+.submit-button__button-appointment{
+   margin-top: 40px;
+}   
+.submit-button__button-contact{   
+   margin-left: auto;
+   margin-right: 40px;
+}
+.submit-button__button-contact:hover,
+.submit-button__button-appointment:hover{
+   background: darken(variables.$primary-buttonColor, 15%);
+   @include variables.buttonHover;
+}

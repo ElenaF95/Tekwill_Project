@@ -1,0 +1,55 @@
+@use 'variables';
+@use 'fontsStyles';
+
+.intro{
+   background-color: variables.$main-darkColor;
+   width: 100%;
+   padding: 145px 0 100px 0;
+   
+   &__heading{
+      max-width: 470px;
+      margin: 0 auto;
+
+      .intro-title{
+         @include fontsStyles.sectionTitle;
+      }
+      .intro-subtitle{
+         @include fontsStyles.sectionSubtitle;
+         margin: 0px 0px 45px 0px;
+      }
+   }
+   &__grid-container{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-gap: 30px;
+
+      .grid-item{
+         background-color: variables.$main-lightColor;
+         padding: 35px;
+
+         &__heading{
+            display: flex;
+            margin-bottom: 15px; 
+            gap: 15px;
+            
+            .grid-item__icon{
+               width: 48px;
+               height: 48px;
+               margin: auto 0;
+            }
+            .grid-item__title{
+               @include fontsStyles.fontSize($size: 16px);
+               @include fontsStyles.lineHeight24($fontW: 700);
+               letter-spacing: 0.1px;
+               margin: auto 0;
+               color: variables.$main-darkColor;
+            }
+         }
+         &__content{
+            @include fontsStyles.fontSize;
+            @include fontsStyles.lineHeight20;
+            color: variables.$supplemental-color1;
+         }
+      }
+   } 
+}

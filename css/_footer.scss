@@ -1,0 +1,127 @@
+@use 'variables';
+@use 'fontsStyles';
+
+.footer {
+   background-color: variables.$main-darkColor;
+   width: 100%;
+   padding: 55px 0 70px 0;
+
+   &__heading{
+      width: 100%;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid #364067;
+      padding-bottom: 55px;
+      margin-bottom: 70px;
+
+      .footer__logo{
+         @include fontsStyles.fontSize($size: 24px);
+         @include fontsStyles.lineHeight32($fontW: 700);
+         letter-spacing: 0.1px;
+         color: variables.$main-lightColor;
+         text-decoration: none;
+      }
+      .footer__action-bar{
+         @include variables.listSetting;
+         margin-left: auto;
+         margin-right: 40px;
+         line-height: 24px;
+         display: flex;
+         gap: 20px;
+         align-items: center;
+
+         .footer__action-sm-icon{
+            width: 24px;
+            height: 24px;
+            background: transparent;
+            border: none; 
+            cursor: pointer;
+            margin: auto 0;
+         }
+      }
+   }
+   &__grid-container{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 2fr;
+      grid-gap: 30px;
+
+      .footer-grid__title{
+         @include fontsStyles.fontSize($size: 16px);
+         @include fontsStyles.lineHeight24($fontW: 700);
+         color: variables.$main-lightColor;
+         letter-spacing: 0.1px;
+         margin: 0 auto 20px 0;
+      }
+      ul {
+         @include variables.listSetting;
+         
+         .footer-grid__list{
+            margin: 10px auto 0 0;
+
+            .footer-grid__link{
+               @include fontsStyles.fontSize;
+               @include fontsStyles.lineHeight24;
+               color: variables.$supplemental-color2;
+               text-decoration: none;
+            }
+         }
+      }
+      .input__subscribe{
+         display: flex; 
+         max-width: 320px; 
+
+         .input__email{
+            display: inline-block;
+            max-width: 210px;
+            background-color:  variables.$input-color;
+            border: 1px solid variables.$border-color2;
+            border-radius: 5px 0px 0px 5px; 
+            padding: 15px 20px;
+            margin: 0;
+            box-sizing: border-box;
+
+            @include fontsStyles.fontSize;
+            @include fontsStyles.lineHeight28($fontW: 400);
+         }
+         input[type="email"]::-webkit-input-placeholder {
+            color: variables.$supplemental-color2;
+         } 
+         .input__submit{
+            display: inline-block;
+            max-width: 110px;
+            border: 1px solid variables.$supplemental-color2;
+            border-radius: 0px 5px 5px 0px; 
+            padding: 15px auto;
+            background-color: variables.$primary-buttonColor;
+
+            @include fontsStyles.fontSize;
+            @include fontsStyles.lineHeight28($fontW: 400);
+            color: variables.$main-lightColor;
+            @include variables.buttonHover;
+            cursor: pointer;
+         }
+         .input__submit:hover{
+            background: darken(variables.$primary-buttonColor, 15%);
+            @include variables.buttonHover;
+         }
+      }
+      .footer__form-text{
+         @include fontsStyles.fontSize($size: 12px);
+         @include fontsStyles.lineHeight28($fontW: 400);
+         color: variables.$supplemental-color2;
+         margin: 0px 0px;
+      }
+   }
+}
+.footer-bottom{
+   background-color: #16697A;
+   width: 100%;
+   padding: 25px 0px;
+
+   &__text{
+      @include fontsStyles.fontSize;
+      @include fontsStyles.lineHeight24;
+      color: variables.$main-lightColor;
+      margin: 0px auto 0px 0px;
+   }
+}

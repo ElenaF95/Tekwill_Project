@@ -1,0 +1,53 @@
+//------COLORS------//
+$main-darkColor:#252B42;
+$main-lightColor: #ffffff;
+$supplemental-color1: #737373;
+$supplemental-color2: #BDBDBD;
+
+$input-color:#F9F9F9;
+
+$border-color1:#dedede;
+$border-color2:#E6E6E6;
+
+$primary-buttonColor: #FFA62B;
+
+//------BUTTONS------//
+%primary-button {
+  display: flex;
+  background-color: $primary-buttonColor;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 35px;
+  color: $main-lightColor;
+  align-items: center;
+  cursor: pointer;
+}
+@mixin buttonHover {
+  transition: all .3s linear;
+  -webkit-transition: all .3s linear;
+  -moz-transition: all .3s linear; 
+}
+
+//------FORMS------//
+@mixin tableDataStyle {
+  background-color: $input-color;
+  border: 1px solid $supplemental-color1;
+  border-radius: 5px;
+  padding: 10px 15px 15px 15px;
+}
+
+//------BACKGROUNDS------//
+@mixin backgroundImgSetting($backgroundImg: url(/img/background.png)) {
+  background-image: $backgroundImg;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: center;
+}
+
+//------LISTS------//
+@mixin listSetting {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+ 
+}

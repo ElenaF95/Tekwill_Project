@@ -4,47 +4,48 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://fonts.googleapis.com/css?family=Montserrat:regular,500,600,700,800&display=swap" rel="stylesheet" />
-        <link rel="stylesheet" href="css/style.css">
+        <!-- <link rel="stylesheet" href="css/style.css"> -->
+        <link rel="stylesheet" href="css/style.scss">
+        <script src="scripts/hm-11.js"></script>
         <script src="scripts/index.js"></script>
 
         <title>KMarketer</title>
     </head>
         <body>
-            <section class="users-block__content">
+            <section class="user-block">
                 <div class="container">
-                    <div id="user__block">
-                        <form id="user-block__form">
-                            <div class="input__user">
-                                <input class="input__user-name" type="text" placeholder="Enter the Fullname">
-                                <input class="button__user-posts" type="submit" value="Get Posts">
+                    <div class="user-block__content">
+                        <form class="user-block__form">
+                            <div class="input-user">
+                                <input class="input-user__name" type="text" placeholder="Enter the Fullname">
+                                <input class="input-user__button-posts" type="submit" value="Get User's Posts">
                             </div>
-                            
                         </form> 
                     </div>
                 </div>
             </section>
-            <section class="top-banner">
+            <section class="top-banner__content">
                 <div class="container">
                     <header class="header">
                         <a href="#" class="header__logo">KMarketer</a>
                     
                         <nav class="header__menu">
                             <ul class="menu__list">
-                                <li class="list__item">
+                                <li>
                                     <a href="#" class="item__link">Home</a>
                                 </li> 
-                                <li class="list__item">
+                                <li>
                                     <a href="#" class="item__link">Product</a>
                                 </li> 
-                                <li class="list__item">
+                                <li>
                                     <a href="#" class="item__link">Pricing</a>
                                 </li> 
-                                <li class="list__item">
+                                <li>
                                     <a href="#" class="item__link">Contact</a>
                                 </li> 
                             </ul> 
                         </nav>     
-                        <ul class="menu__action-bar">  
+                        <ul class="header__action-bar">  
                             <li>
                                 <button class="action__item"><img src="icons/search.svg" alt="icon-search"></button>
                             </li> 
@@ -54,9 +55,9 @@
                         </ul>                           
                     </header>
                     
-                    <div class="top-banner__content">
+                    <div class="top-banner">
                         <h1 class="top-banner__title">We Take Care of the Future</h1>
-                        <h4 class="top-banner__text">We know how large objects will act, but things on a small scale just do not act that way.</h4>
+                        <h4 class="top-banner__subtitle">We know how large objects will act, but things on a small scale just do not act that way.</h4>
                         <div class="top-banner__buttons">
                             <button class="top-banner__button top-banner__button-orange">Get Quote Now</button>
                             <button class="top-banner__button top-banner__button-border">Learn More</button>
@@ -78,7 +79,7 @@
                         <div class="grid-item">
                             <div class="grid-item__heading">
                                 <img class="grid-item__icon" src="icons/carbon_tool-box.svg" alt="tool-box-icon">
-                                <h5 class="grid-item__title">Digital Marketing</h5>
+                                <h5 class="grid-item__title">Business Growing</h5>
                             </div>    
                             <p class="grid-item__content">the quick fox jumps over the lazy dog the quick fox jumps over the lazy dog</p>
                         </div>
@@ -94,7 +95,7 @@
                         <div class="grid-item">
                             <div class="grid-item__heading">
                                 <img class="grid-item__icon" src="icons/carbon_notebook.svg" alt="notebook-icon">
-                                <h5 class="grid-item__title">Business Growing</h5>
+                                <h5 class="grid-item__title">Individual Contract</h5>
                             </div>    
                             <p class="grid-item__content">the quick fox jumps over the lazy dog the quick fox jumps over the lazy dog</p>
                         </div>  
@@ -102,7 +103,7 @@
                         <div class="grid-item">
                             <div class="grid-item__heading">
                                 <img class="grid-item__icon" src="icons/clarity_users-line.svg" alt="users-icon">
-                                <h5 class="grid-item__title">National top 50 firms</h5>
+                                <h5 class="grid-item__title">Reliable Partnership</h5>
                             </div>    
                             <p class="grid-item__content">the quick fox jumps over the lazy dog the quick fox jumps over the lazy dog</p>
                         </div>
@@ -126,9 +127,9 @@
                 </div>
             </section>
 
-            <section class="video-section">
+            <section class="video-section__content">
                 <div class="container">
-                    <div class="video-section__content">
+                    <div class="video-section">
                         <div class="video-section__heading">
                             <h2 class="video-section__title">We are providing best business service.</h2>
                             <p class="video-section__subtitle">Problems trying to resolve the conflict between 
@@ -136,17 +137,20 @@
                             </p>
                         </div>
                     
-                        <div class="video-section__movie">
-                            <img class="video-section__movie-file" src="img/video.png" alt="movie about company">
-                            <button class="video-section__movie-button"><img class="video__button-play" src="icons/icn play.svg"></button>
+                        <div class="video-section__movie" id="video">
+                            <div class="video-control" id="video-play"></div>
+                            <div class="video-control" id="video-over"></div>
+                            <video id="movie-file" class="video-section__movie-file" preload="auto" poster="img/video.png" loop>
+                            <source id='mp4' src="video/video.mp4" type="video/mp4">
+                            </video>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section class="reviews-section">
+            <section class="reviews-section__content">
                 <div class="container">
-                    <div class="reviews-section__content">
+                    <div class="reviews-section">
                         <div class="reviews-section__heading">
                             <h2 class="reviews-section__title">What Clients Say</h2>
                             <p class="reviews-section__subtitle">Problems trying to resolve the conflict between 
@@ -182,7 +186,7 @@
                                     <img class="reviews-section__clients-photo" src="img/client1.png" alt="blonde woman in white blouse">
                                     <div class="reviews-section__clients-data">
                                         <a href="#" class="reviews-section__clients-fullname">Regina Miles</a>
-                                        <h6 class="reviews-section__clients-profession">Designer</h6>
+                                        <h6 class="reviews-section__clients-profession">Manager</h6>
                                     </div>
                                 </div>
                             </div>
@@ -213,7 +217,7 @@
                                 <div class="reviews-section__client">
                                     <img class="reviews-section__clients-photo" src="img/client2.png" alt="woman with grey hair in black blouse and colored wooden beads">
                                     <div class="reviews-section__clients-data">
-                                        <a href="#" class="reviews-section__clients-fullname">Anna Miles</a>
+                                        <a href="#" class="reviews-section__clients-fullname">Anna Smith</a>
                                         <h6 class="reviews-section__clients-profession">Designer</h6>
                                     </div>
                                 </div>
@@ -245,8 +249,8 @@
                                 <div class="reviews-section__client">
                                     <img class="reviews-section__clients-photo" src="img/client3.png" alt="brown-haired man with a beard, glasses, a dark blue jacket and a white shirt">
                                     <div class="reviews-section__clients-data">
-                                        <a href="#" class="reviews-section__clients-fullname">Rick Miles</a>
-                                        <h6 class="reviews-section__clients-profession">Designer</h6>
+                                        <a href="#" class="reviews-section__clients-fullname">Rick Taylor</a>
+                                        <h6 class="reviews-section__clients-profession">Entrepreneur</h6>
                                     </div>
                                 </div>
                             </div>  
@@ -256,9 +260,9 @@
                 </div>
             </section>
 
-            <section class="teams-section">
+            <section class="teams-section__content">
                 <div class="container">
-                    <div class="teams-section__content">
+                    <div class="teams-section">
                         <div class="teams-section__heading">
                             <h2 class="teams-section__title">Meet Our Team</h2>
                             <p class="teams-section__subtitle">Problems trying to resolve the conflict between 
@@ -323,9 +327,9 @@
                 </div>
             </section>
 
-            <section class="recording-section">
+            <section class="recording-section__content">
                 <div class="container">
-                    <div class="recording-section__content">
+                    <div class="recording-section">
                         <div class="recording-section__form-heading">
                             <h5 class="recording-section__description">Contact Us</h5>
                             <h2 class="recording-section__title">Make an Appointment</h2>
@@ -387,9 +391,9 @@
                     </div>
                 </div>
             </section>
-            <section class="contact-section">
+            <section class="contact-section__content">
                 <div class="container">
-                    <div class="contact-section__content">
+                    <div class="contact-section">
                         <div>
                             <h3 class="contact-section__title">Consulting Agency For Your Business</h3>
                             <p class="contact-section__subtitle">the quick fox jumps over the lazy dog</p>
@@ -399,8 +403,8 @@
                 </div>
             </section>
             
-            <footer class="footer">
-                <section class="footer__content">
+            <footer class="footer__content">
+                <section class="footer">
                     <div class="container">
                         <div class="footer__heading">
                             <a href="#" class="footer__logo">KMarketer</a>
@@ -419,8 +423,6 @@
                                 </li> 
                             </ul>  
                         </div>
-
-                        <hr>
 
                         <div class="footer__grid-container">
                             <div class="footer__grid-item">
@@ -504,7 +506,7 @@
                     </div> 
                 </section>
 
-                <section class="footer__bottom">
+                <section class="footer-bottom">
                     <div class="container">
                         <p class="footer-bottom__text">Made With Love By Figmaland All Right Reserved</p>
                     </div>

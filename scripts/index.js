@@ -1,4 +1,21 @@
 document.addEventListener('DOMContentLoaded', function () {
+    //-----------VIDEO-SECTION----------------------//
+    const videoContainer = document.getElementById('video');
+    const videoControls = document.querySelector('.video-control');
+    const video = document.querySelector('#movie-file');
+    
+    videoControls.addEventListener('click', function() {
+        if (video.paused) {
+            video.play();
+            videoContainer.classList.add('video-is-playing');
+        } else {
+            video.pause();
+            videoContainer.classList.remove('video-is-playing');
+            video.load();
+        }
+    });
+
+    //-----------RECORDING-SECTION----------------------//
     let form = document.querySelector('.recording-section__form');
     
     let inputFullName = form.querySelector('#recording-section__input-fullname');

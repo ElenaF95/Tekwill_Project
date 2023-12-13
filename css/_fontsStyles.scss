@@ -1,0 +1,77 @@
+//-----VARIABLES-----//
+@use 'variables';
+$font-family: Montserrat;
+$letter-spacing1: 0.1px;
+$letter-spacing2: 0.2px;
+
+//-----FONT-SIZE-----//
+@mixin fontSize($size: 14px){
+   font-family: $font-family;
+   font-size: $size;
+   letter-spacing: $letter-spacing2;
+}
+
+//-----FONT-OPTIONS-----//
+@mixin lineHeight18($fontW: 500) {
+   line-height: 20px;
+   font-weight: $fontW;
+}
+@mixin lineHeight20($fontW: 500) {
+   line-height: 20px;
+   font-weight: $fontW;
+}
+@mixin lineHeight24($fontW: 600) {
+   line-height: 24px;
+   font-weight: $fontW;
+}
+@mixin lineHeight26($fontW: 700) {
+   line-height: 26px;
+   font-weight: $fontW;
+}
+@mixin lineHeight28($fontW: 700) {
+   line-height: 28px;
+   font-weight: $fontW;
+}
+@mixin lineHeight30($fontW: 700) {
+   line-height: 30px;
+   font-weight: $fontW;
+}
+@mixin lineHeight32($fontW: 800) {
+   line-height: 32px;
+   font-weight: $fontW;
+}
+@mixin lineHeight57($fontW: 700) {
+   line-height: 57px;
+   font-weight: $fontW;
+}
+@mixin lineHeight80($fontW: 800) {
+   line-height: 80px;
+   font-weight: $fontW;
+}
+//-----TEXT-BLOCK-STYLES-----//
+@mixin userText {
+   @include fontSize($size: 12px);
+   @include lineHeight24($fontW: 500);
+   color: variables.$supplemental-color1;
+   margin: 0px 0px;
+}
+@mixin blockText($textColor: variables.$supplemental-color1) {
+   @include fontSize;
+   @include lineHeight24;
+   color: $textColor;
+   margin: 0px 0px;
+}
+//-----SECTION'S-HEADING-STYLE-----//
+@mixin sectionTitle {
+   @include fontSize($size: 40px);
+   @include lineHeight57;
+   color: variables.$main-lightColor;
+   text-align: center;
+   margin: 0px 0px 10px 0px;
+}
+@mixin sectionSubtitle {
+   @include fontSize;
+   @include lineHeight20;
+   color: variables.$main-lightColor;
+   text-align: center;
+}
