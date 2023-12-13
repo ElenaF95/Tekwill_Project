@@ -1,3 +1,10 @@
+import Swiper from 'swiper';
+import { Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+
 document.addEventListener('DOMContentLoaded', function () {
     //-----------VIDEO-SECTION----------------------//
     const videoContainer = document.getElementById('video');
@@ -14,6 +21,98 @@ document.addEventListener('DOMContentLoaded', function () {
             video.load();
         }
     });
+
+    //--------------REVIEWS-SECTION-----------------------//
+    new Swiper(".swiper", {
+        modules: [Navigation, Pagination],
+        slidesPerView: 1,
+        spaceBetween: 30,
+        breakpoints: {
+            320: {
+              slidesPerView: 1
+            },
+            480: {
+              slidesPerView: 2,
+              spaceBetween: 20
+            },
+            600: {
+              slidesPerView: 3,
+              spaceBetween: 30
+            }
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          type: "progressbar"
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev"
+        }
+    });
+
+    //--------------TEAMS-SECTION-----------------------//
+    const initMySlider = () => {
+        const width = 305;
+        const slidesPerView = 3;
+        let position = 0;
+        const slidesList = document.querySelector('.teams-carousel__list');
+        const slides = document.querySelectorAll('.teams-carousel__item');
+        const nextButton = document.querySelector('.arrow--next');
+        const prevButton = document.querySelector('.arrow--prev');
+        
+        nextButton.addEventListener('click', nextClicked);
+        prevButton.addEventListener('click', prevClicked);
+
+        function nextClicked() {
+            position -= width * slidesPerView;
+        
+            position = Math.max(position, -width * (slides.length - slidesPerView));
+            console.log('next:', position);
+            slidesList.style.marginLeft = position + 'px';
+        }
+        function prevClicked() {
+            position += width * slidesPerView;
+            
+            position = Math.min(position, 0);
+            console.log('prev:',position);
+            slidesList.style.marginLeft = position + 'px';
+        }
+    }
+    initMySlider();
+
+    const mediaQuery = window.matchMedia('(max-width: 480px)')
+    
+    function handleTabletChange(e) {
+        if (e.matches) {
+            console.log('Media Query Matched!')
+            const itemWidth = 210;
+            const itemsPerView = 1;
+            let initPosition = 0;
+            const itemsList = document.querySelector('.teams-carousel__list');
+            const items = document.querySelectorAll('.teams-carousel__item');
+            const nextBtn = document.querySelector('.arrow--next');
+            const prevBtn = document.querySelector('.arrow--prev');
+            
+            nextBtn.addEventListener('click', nextClicked);
+            prevBtn.addEventListener('click', prevClicked);
+
+            function nextClicked() {
+                initPosition -= itemWidth * itemsPerView;
+            
+                initPosition = Math.max(initPosition, -itemWidth * (items.length - itemsPerView));
+                console.log('next:', initPosition);
+                itemsList.style.marginLeft = initPosition + 'px';
+            }
+            function prevClicked() {
+                initPosition += itemWidth * itemsPerView;
+                
+                initPosition = Math.min(initPosition, 0);
+                console.log('prev:',initPosition);
+                itemsList.style.marginLeft = initPosition + 'px';
+            }
+        }
+    }
+    handleTabletChange(mediaQuery)
 
     //-----------RECORDING-SECTION----------------------//
     let form = document.querySelector('.recording-section__form');

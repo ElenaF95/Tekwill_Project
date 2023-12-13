@@ -1,17 +1,21 @@
 {
   "name": "tekwill_project",
   "version": "1.0.0",
-  "description": "",
-  
+  "description": "KMarketer",
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html"
   },
-  "author": "",
+  "author": "Elena Fachira",
   "license": "ISC",
+  "dependencies": {
+    "parcel": "^2.10.3",
+    "swiper": "^11.0.5"
+  },
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.10.3",
-    "parcel": "^2.10.3"
+    "@parcel/transformer-sass": "^2.10.3"
+  },
+  "@parcel/resolver-default": {
+    "packageExports": true
   }
-  
 }

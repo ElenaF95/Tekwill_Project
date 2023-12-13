@@ -103,3 +103,60 @@
       }
    }
 }
+/*---MEDIA-QUERIES-----------------------------------------*/
+@media screen and (min-width: 320px) and (max-width: 480px) {
+   .top-banner__content{
+      padding: 40px 0 80px 0;
+
+      .header{
+         flex-wrap: wrap;
+         align-items: center;
+         gap: 10px;
+         letter-spacing: 0.1px;
+         margin-bottom: 140px;
+
+         &__logo{
+            text-align: center;
+            margin: 0 auto;
+            font-size: 20px;
+         }
+         &__menu{
+            margin: 0 auto;
+            font-size: 12px;
+         }
+         &__action-bar{
+            margin: 0 auto;
+            font-size: 12px;
+            text-align: center;
+         }
+      }
+   }
+   .top-banner__title{
+      font-size: 28px;
+      line-height: 40px;
+      font-weight: 700;
+      text-align: center;
+      margin: 0px 0px 15px 0px;
+      letter-spacing: 0.1px;
+   }
+   .top-banner__subtitle{
+      font-size: 12px;
+      line-height: 18px;
+      font-weight: 500;
+      margin: 0px 0px 20px 0px;
+      letter-spacing: 0.1px;
+   }
+   .top-banner__buttons{
+      display:block;
+   }
+   
+   .top-banner__button{
+      line-height: 18px;
+      padding: auto;
+      letter-spacing: 0.1px;
+      font-size: 12px;
+      margin: 10px auto;
+      width: 220px;
+      justify-content: center;
+   }
+}

@@ -21,46 +21,109 @@
             grid-template-columns: 1fr 1fr 1fr;
             grid-gap: 30px;
 
-            .reviews-section__grid-item{
-                background-color: variables.$main-lightColor;
-                padding: 30px 35px;
-                align-items: center;
-                border-radius: 5px;
-                border: 1px solid variables.$border-color1;
-            
-                .reviews-section__rating{
-                    @include variables.listSetting;
-                    display: flex;
-                    margin-top: 0px;
-                    margin-bottom: 20px;
+           
+        }
+    }
+}
+.reviews-section__grid-item{
+    background-color: variables.$main-lightColor;
+    padding: 30px 35px;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid variables.$border-color1;
 
-                    .rating__score{
-                        width: 22px;
-                    }
-                }
-                .reviews-section__client-message {
-                    @include fontsStyles.blockText;
-                }
-                .reviews-section__client{
-                    display: flex;
-                    margin-top: 20px;
-                    margin-bottom: 0px;
+    .reviews-section__rating{
+        @include variables.listSetting;
+        display: flex;
+        margin-top: 0px;
+        margin-bottom: 20px;
 
-                    .reviews-section__clients-photo{
-                        width: 50px;
-                        height: 50px;
-                        margin-right: 15px;
-                    }
-                    .reviews-section__clients-fullname{
-                        @include fontsStyles.blockText($textColor: variables.$primary-buttonColor);
-                        text-decoration: none;
-                    }
-                    .reviews-section__clients-profession{
-                        @include fontsStyles.blockText($textColor: variables.$main-darkColor);
-                    }
+        .rating__score{
+            width: 22px;
+        }
+    }
+    .reviews-section__client-message {
+        @include fontsStyles.blockText;
+    }
+    .reviews-section__client{
+        display: flex;
+        margin-top: 20px;
+        margin-bottom: 0px;
+
+        .reviews-section__clients-photo{
+            width: 50px;
+            height: 50px;
+            margin-right: 15px;
+        }
+        .reviews-section__clients-fullname{
+            @include fontsStyles.blockText($textColor: variables.$primary-buttonColor);
+            text-decoration: none;
+        }
+        .reviews-section__clients-profession{
+            @include fontsStyles.blockText($textColor: variables.$main-darkColor);
+        }
+    }
+}
+.swiper {
+   width: 100%;
+   height: 100%;
+   margin-top: 80px; 
+   
+}
+.swiper-wrapper {
+    display: flex;
+}
+.swiper-slide {
+    display: flex;
+}
+/*---MEDIA-QUERIES-----------------------------------------*/
+@media screen and (min-width: 320px) and (max-width: 480px) {
+    .reviews-section__content {
+        .reviews-section {
+            &__heading {
+                .reviews-section__title {
+                    width: 290px;
+                    margin: 0 auto;
                 }
+                .reviews-section__subtitle {
+                    width: 260px;
+					margin: 0px auto 45px auto;
+                }
+            }
+            &__grid-container {
+                grid-template-columns: auto;
+                grid-gap: 15px;
+            }
+        }
+    }
+    .reviews-section__grid-item{
+        padding: 20px 35px;
+    
+        .reviews-section__rating{
+            margin-bottom: 10px;
+    
+            .rating__score{
+                width: 20px;
+
+                img {
+                    width: 18px;
+                }
+            }
+        }
+        .reviews-section__client{
+            margin-top: 10px;
+            align-items: center;
+    
+            .reviews-section__clients-photo{
+                width: 35px;
+                height: 35px;
+            }
+            .reviews-section__clients-fullname{
+                @include fontsStyles.lineHeight20($fontW: 600);
+            }
+            .reviews-section__clients-profession{
+                @include fontsStyles.lineHeight20($fontW: 600);
             }
         }
     }
 }
-
