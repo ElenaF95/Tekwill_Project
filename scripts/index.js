@@ -6,7 +6,9 @@ import 'swiper/css/pagination';
 
 
 document.addEventListener('DOMContentLoaded', function () {
+
     //-----------VIDEO-SECTION----------------------//
+
     const videoContainer = document.getElementById('video');
     const videoControls = document.querySelector('.video-control');
     const video = document.querySelector('#movie-file');
@@ -23,7 +25,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     //--------------REVIEWS-SECTION-----------------------//
-    new Swiper(".swiper", {
+
+    const swiper = new Swiper(".swiper", {
         modules: [Navigation, Pagination],
         slidesPerView: 1,
         spaceBetween: 30,
@@ -47,10 +50,20 @@ document.addEventListener('DOMContentLoaded', function () {
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev"
+        },
+        //------------------LOCAL-STORAGE----------------------//
+        on: {
+            slideChange: function () {
+              localStorage.setItem('currentSlide', swiper.activeIndex);
+            }
         }
     });
-
+    const savedSlide = localStorage.getItem('currentSlide')
+    if (savedSlide) {
+        swiper.slideTo(savedSlide)
+    }
     //--------------TEAMS-SECTION-----------------------//
+
     const initMySlider = () => {
         const width = 305;
         const slidesPerView = 3;
@@ -114,7 +127,67 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     handleTabletChange(mediaQuery)
 
+    //------------------COOKIES----------------------//
+
+    const setCookie = (name, value, daysToExprire) => {
+        const date = new Date();
+        date.setTime(date.getTime() + daysToExprire * 24 * 60 * 60 * 1000);
+        const expirationDate = date.toUTCString();
+
+        console.log(expirationDate);
+
+        document.cookie = `${name}=${value};expires=${expirationDate}`;
+    }
+   
+    const getCookie = (name) => {
+        const cookies = document.cookie.split(';');
+
+        for (let i = 0; i < cookies.length; i++) {
+          let curentCookie = cookies[i].trim();
+          if (curentCookie.startsWith(name + '=')) {
+            let value = curentCookie.substring(name.length + 1);
+            return value
+          }
+        }
+        return null 
+    }
+    
+    const userLogin = getCookie('login');
+
+    if (!userLogin) {
+        const login = prompt('Welcome to KMarketer! \n Please enter your login:');
+        if (!login ) {
+            alert('You are not logged in because you have not entered your details.\n Refresh the page to try again!');
+
+        } else {
+            const pass = prompt('Please enter your password:');
+            if (!pass ) {
+                alert('You are not logged in because you have not entered your password.\n Refresh the page to try again!');
+            } else {
+                setCookie('login', login, 90);
+                setCookie('password', pass, 90);
+            }
+        }
+    } else {
+        getCookie('login');
+        getCookie('password');
+    }
+
+    //------------------SESSION-STORAGE----------------------//
+
+    function mySessionStorage() {
+        const date = new Date();
+        const time = date.toLocaleString();
+    
+        sessionStorage.setItem('loginTime', time);
+        const loginTime = sessionStorage.getItem('loginTime');
+    
+        console.log('The user logged on', loginTime);
+    }
+    mySessionStorage();
+
     //-----------RECORDING-SECTION----------------------//
+
     let form = document.querySelector('.recording-section__form');
     
     let inputFullName = form.querySelector('#recording-section__input-fullname');
